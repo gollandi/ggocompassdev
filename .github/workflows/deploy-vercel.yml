@@ -15,6 +15,34 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Validate Vercel Secrets
+        run: |
+          if [ -z "${{ secrets.VERCEL_TOKEN }}" ]; then
+            echo "❌ ERROR: VERCEL_TOKEN secret is not configured!"
+            echo ""
+            echo "To fix this issue, you need to add GitHub repository secrets:"
+            echo "1. Go to: https://github.com/${{ github.repository }}/settings/secrets/actions"
+            echo "2. Add the following secrets:"
+            echo "   - VERCEL_TOKEN (get from https://vercel.com/account/tokens)"
+            echo "   - VERCEL_ORG_ID (from Vercel project settings)"
+            echo "   - VERCEL_PROJECT_ID (from Vercel project settings)"
+            echo ""
+            echo "📚 For detailed instructions, see: .github/workflows/README.md"
+            echo ""
+            exit 1
+          fi
+          if [ -z "${{ secrets.VERCEL_ORG_ID }}" ]; then
+            echo "❌ ERROR: VERCEL_ORG_ID secret is not configured!"
+            echo "Please add it in: https://github.com/${{ github.repository }}/settings/secrets/actions"
+            exit 1
+          fi
+          if [ -z "${{ secrets.VERCEL_PROJECT_ID }}" ]; then
+            echo "❌ ERROR: VERCEL_PROJECT_ID secret is not configured!"
+            echo "Please add it in: https://github.com/${{ github.repository }}/settings/secrets/actions"
+            exit 1
+          fi
+          echo "✅ All required Vercel secrets are configured"
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:

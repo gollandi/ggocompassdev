@@ -54,6 +54,9 @@ npm run start
 - Push to `main` branch for automatic deployment via GitHub Actions
 - See [GitHub Actions Setup](.github/workflows/README.md) for configuration
 
+> **🚨 Deployment Failing?**  
+> If you see "Error: No existing credentials found" → [Quick Fix](./VERCEL_SECRETS_SETUP.md)
+
 ## Features
 
 - ✅ **13 Complete Screens** - Full patient journey from splash to completion
@@ -66,6 +69,7 @@ npm run start
 
 ## Documentation
 
+- **[VERCEL_SECRETS_SETUP.md](./VERCEL_SECRETS_SETUP.md)** - **🚨 Fix "No credentials found" error**
 - **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Complete deployment guide with CI/CD setup
 - **[.github/workflows/README.md](.github/workflows/README.md)** - GitHub Actions workflows documentation
 - **[INTEGRATION_GUIDE.md](./INTEGRATION_GUIDE.md)** - How to integrate into main website
