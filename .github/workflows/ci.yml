@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  lint-and-build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Run lint
+        run: npm run lint
+        continue-on-error: true
+
+      - name: Build application
+        run: npm run build
+        env:
+          NEXT_PUBLIC_SANITY_PROJECT_ID: placeholder123
+          NEXT_PUBLIC_SANITY_DATASET: production
+          SANITY_API_TOKEN: sk_placeholder_token_here
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-output
+          path: .next
+          retention-days: 7

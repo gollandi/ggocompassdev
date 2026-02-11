@@ -1,5 +1,8 @@
 # GGO Compass - Digital Patient Journey Companion
 
+![CI Status](https://github.com/gollandi/ggocompassdev/workflows/CI/badge.svg)
+![Deploy Status](https://github.com/gollandi/ggocompassdev/workflows/Deploy%20to%20Vercel/badge.svg)
+
 A standalone Next.js 14+ application with Sanity CMS integration for post-surgery recovery tracking and guidance. This app transforms the original React/Vite wireframe prototype into a production-ready, scalable system designed for easy integration into the main GGO website.
 
 ## Overview
@@ -38,14 +41,18 @@ npm run start
 
 ### Deploy to Vercel
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/gollandi/GGOCompass)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/gollandi/ggocompassdev)
 
-For detailed deployment instructions, see [VERCEL_DEPLOYMENT_GUIDE.md](./VERCEL_DEPLOYMENT_GUIDE.md)
+**For complete deployment instructions, see [DEPLOYMENT.md](./DEPLOYMENT.md)**
 
 **Quick Deploy:**
 1. Click the "Deploy with Vercel" button above
 2. Set environment variables: `NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_DATASET`, `SANITY_API_TOKEN`
 3. Deploy!
+
+**Automated Deployment:**
+- Push to `main` branch for automatic deployment via GitHub Actions
+- See [GitHub Actions Setup](.github/workflows/README.md) for configuration
 
 ## Features
 
@@ -59,9 +66,11 @@ For detailed deployment instructions, see [VERCEL_DEPLOYMENT_GUIDE.md](./VERCEL_
 
 ## Documentation
 
-- **[VERCEL_DEPLOYMENT_GUIDE.md](./VERCEL_DEPLOYMENT_GUIDE.md)** - Complete guide for deploying to Vercel
+- **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Complete deployment guide with CI/CD setup
+- **[.github/workflows/README.md](.github/workflows/README.md)** - GitHub Actions workflows documentation
 - **[INTEGRATION_GUIDE.md](./INTEGRATION_GUIDE.md)** - How to integrate into main website
 - **[SANITY_SETUP.md](./SANITY_SETUP.md)** - Sanity CMS setup and data migration
+- **[VERCEL_DEPLOYMENT_GUIDE.md](./VERCEL_DEPLOYMENT_GUIDE.md)** - Legacy Vercel deployment guide
 
 ## Tech Stack
 
