@@ -26,6 +26,9 @@ This directory contains GitHub Actions workflows for CI/CD automation.
 
 **Purpose**: Automatically deploys the application to Vercel production environment.
 
+> **⚠️ Getting "No credentials found" error?**  
+> See [VERCEL_SECRETS_SETUP.md](../../VERCEL_SECRETS_SETUP.md) for a quick 5-minute fix!
+
 **Steps**:
 - Checks out the code
 - Sets up Node.js environment
@@ -35,6 +38,9 @@ This directory contains GitHub Actions workflows for CI/CD automation.
 - Deploys to Vercel production
 
 ## Required GitHub Secrets
+
+> **🚨 IMPORTANT:** The deployment workflow will fail without these secrets!  
+> **Getting "No credentials found" error?** → [Quick Fix Guide](../../VERCEL_SECRETS_SETUP.md)
 
 To use the Vercel deployment workflow, you need to configure the following secrets in your GitHub repository:
 
