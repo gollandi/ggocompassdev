@@ -15,56 +15,70 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # Basic sanity checks (no secret leakage)
       - name: Validate Vercel Secrets
+        shell: bash
         run: |
+          set -euo pipefail
+
+          missing=0
+
           if [ -z "${{ secrets.VERCEL_TOKEN }}" ]; then
             echo "❌ ERROR: VERCEL_TOKEN secret is not configured!"
-            echo ""
-            echo "To fix this issue, you need to add GitHub repository secrets:"
-            echo "1. Go to: https://github.com/${{ github.repository }}/settings/secrets/actions"
-            echo "2. Add the following secrets:"
-            echo "   - VERCEL_TOKEN (get from https://vercel.com/account/tokens)"
-            echo "   - VERCEL_ORG_ID (from Vercel project settings)"
-            echo "   - VERCEL_PROJECT_ID (from Vercel project settings)"
-            echo ""
-            echo "📚 For detailed instructions, see: .github/workflows/README.md"
-            echo ""
-            exit 1
+            missing=1
           fi
+
           if [ -z "${{ secrets.VERCEL_ORG_ID }}" ]; then
             echo "❌ ERROR: VERCEL_ORG_ID secret is not configured!"
-            echo "Please add it in: https://github.com/${{ github.repository }}/settings/secrets/actions"
-            exit 1
+            echo "   (Use your Vercel Team ID, e.g. team_xxxxx)"
+            missing=1
           fi
+
           if [ -z "${{ secrets.VERCEL_PROJECT_ID }}" ]; then
             echo "❌ ERROR: VERCEL_PROJECT_ID secret is not configured!"
-            echo "Please add it in: https://github.com/${{ github.repository }}/settings/secrets/actions"
+            echo "   (Find it in Vercel Project Settings → General)"
+            missing=1
+          fi
+
+          if [ "$missing" -ne 0 ]; then
+            echo ""
+            echo "Fix: GitHub repo → Settings → Secrets and variables → Actions"
+            echo "Add: VERCEL_TOKEN, VERCEL_ORG_ID, VERCEL_PROJECT_ID"
             exit 1
           fi
+
           echo "✅ All required Vercel secrets are configured"
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: "20"
 
+      # Pin the CLI version for reproducibility
       - name: Install Vercel CLI
-        run: npm install -g vercel@latest
+        run: npm install -g vercel@50.15.1
 
+      # Pull env vars into .vercel (non-interactive)
       - name: Pull Vercel Environment Information
-        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
-        env:
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          vercel pull --yes \
+            --environment=production \
+            --token=${{ secrets.VERCEL_TOKEN }} \
+            --scope=${{ secrets.VERCEL_ORG_ID }} \
+            --project=${{ secrets.VERCEL_PROJECT_ID }}
 
+      # Build locally on the runner (so deploy can be --prebuilt)
       - name: Build Project Artifacts
-        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
-        env:
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          vercel build --prod \
+            --token=${{ secrets.VERCEL_TOKEN }} \
+            --scope=${{ secrets.VERCEL_ORG_ID }} \
+            --project=${{ secrets.VERCEL_PROJECT_ID }}
 
       - name: Deploy to Vercel
-        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
-        env:
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          vercel deploy --prebuilt --prod \
+            --token=${{ secrets.VERCEL_TOKEN }} \
+            --scope=${{ secrets.VERCEL_ORG_ID }} \
+            --project=${{ secrets.VERCEL_PROJECT_ID }}
+
