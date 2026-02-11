@@ -1,0 +1,42 @@
+{
+    "_id": "procedure-circumcision",
+    "_type": "ggoProcedure",
+    "name": "Circumcision",
+    "slug": {
+        "_type": "slug",
+        "current": "circumcision"
+    },
+    "category": "urology",
+    "recoveryType": "day-case",
+    "totalRecoveryDays": 14,
+    "description": "Surgical removal of the foreskin for medical or personal reasons.",
+    "preOperativeInstructions": "Fast for 6 hours before surgery. Shower on the morning of the procedure.",
+    "postOperativeInstructions": "Keep the area clean and dry for the first 24 hours, then shower daily. Wear loose-fitting underwear. Avoid sexual activity for at least 4 weeks and avoid strenuous activity until comfortable.",
+    "expectedOutcomes": "Initial healing within about 2 weeks, with full healing over the following weeks. Improved hygiene and reduced infection risk.",
+    "uiCustomization": {
+        "welcomeTitle": "Your Circumcision Recovery",
+        "welcomeBody": "Most patients complete initial healing in about 2 weeks, with full healing over the following weeks.",
+        "recoveryIntroTitle": "Your 14-day recovery plan",
+        "checklistOverrides": [
+            {
+                "key": "wound_check",
+                "text": "Check for swelling or bleeding"
+            },
+            {
+                "key": "dressing_change",
+                "text": "Change dressing as instructed"
+            }
+        ]
+    },
+    "commonConcerns": [
+        {
+            "concern": "When can I shower?",
+            "response": "You can shower 24 hours after surgery. Pat the area dry gently."
+        },
+        {
+            "concern": "How much swelling is normal?",
+            "response": "Mild to moderate swelling for the first week is normal. Use ice packs if needed."
+        }
+    ],
+    "isActive": true
+}

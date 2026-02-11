@@ -1,0 +1,201 @@
+[
+    {
+        "_id": "location-london-bridge",
+        "_type": "ggoLocation",
+        "name": "London Bridge Hospital",
+        "slug": {
+            "_type": "slug",
+            "current": "london-bridge-hospital"
+        },
+        "shortName": "LBH",
+        "address": {
+            "street": "27 Tooley St",
+            "city": "London",
+            "postcode": "SE1 2PR",
+            "country": "UK"
+        },
+        "contacts": {
+            "main": {
+                "phone": "+44 20 7234 2009",
+                "email": "info@hcahealthcare.co.uk"
+            },
+            "emergency": {
+                "urgentLine": "+44 20 7234 2256"
+            }
+        },
+        "isActive": true
+    },
+    {
+        "_id": "procedure-robotic-prostatectomy",
+        "_type": "ggoProcedure",
+        "name": "Robotic Radical Prostatectomy",
+        "slug": {
+            "_type": "slug",
+            "current": "robotic-prostatectomy"
+        },
+        "category": "urology",
+        "recoveryType": "overnight",
+        "totalRecoveryDays": 14,
+        "availableLocations": [
+            {
+                "_type": "reference",
+                "_ref": "location-london-bridge"
+            }
+        ],
+        "description": "Minimally invasive surgery to remove the prostate gland using the da Vinci surgical system.",
+        "content": [
+            {
+                "_type": "block",
+                "style": "h3",
+                "children": [
+                    {
+                        "_type": "span",
+                        "text": "About the Procedure"
+                    }
+                ]
+            },
+            {
+                "_type": "block",
+                "style": "normal",
+                "children": [
+                    {
+                        "_type": "span",
+                        "text": "This procedure uses robotic assistants to perform precise removal of the prostate."
+                    }
+                ]
+            },
+            {
+                "_type": "videoResourceBlock",
+                "title": "Dr. Smith explains the process",
+                "url": "https://vimeo.com/123456789"
+            },
+            {
+                "_type": "accordionBlock",
+                "items": [
+                    {
+                        "title": "What are the benefits?",
+                        "content": [
+                            {
+                                "_type": "block",
+                                "children": [
+                                    {
+                                        "_type": "span",
+                                        "text": "Less pain, faster recovery, and better nerve preservation."
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "title": "How long does it take?",
+                        "content": [
+                            {
+                                "_type": "block",
+                                "children": [
+                                    {
+                                        "_type": "span",
+                                        "text": "Typically 2-3 hours under general anaesthetic."
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "uiCustomization": {
+            "welcomeTitle": "Your Prostatectomy Journey",
+            "welcomeBody": "We have prepared a 14-day recovery plan to help you return to full activity.",
+            "checklistOverrides": [
+                {
+                    "key": "clexane_check",
+                    "text": "Inject Clexane blood thinner"
+                },
+                {
+                    "key": "catheter_care",
+                    "text": "Empty your catheter bag"
+                }
+            ]
+        },
+        "isActive": true
+    },
+    {
+        "_id": "recovery-day-0-robotic-prostatectomy",
+        "_type": "ggoRecoveryDay",
+        "dayNumber": 0,
+        "procedure": {
+            "_type": "reference",
+            "_ref": "procedure-robotic-prostatectomy"
+        },
+        "phase": "surgery",
+        "title": "Surgery Day",
+        "normalExperiences": [
+            {
+                "_type": "cardBlock",
+                "tone": "info",
+                "heading": "Waking Up",
+                "content": [
+                    {
+                        "_type": "block",
+                        "children": [
+                            {
+                                "_type": "span",
+                                "text": "You will wake up in the recovery room. You may feel groggy and have a catheter in place."
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "redFlags": [
+            "Severe pain not controlled by medication",
+            "Heavy bleeding around the catheter"
+        ],
+        "activities": [
+            {
+                "label": "Sit on edge of bed",
+                "status": "allowed",
+                "icon": "Activity"
+            },
+            {
+                "label": "Drive",
+                "status": "avoid",
+                "icon": "Car"
+            }
+        ]
+    },
+    {
+        "_id": "recovery-day-1-robotic-prostatectomy",
+        "_type": "ggoRecoveryDay",
+        "dayNumber": 1,
+        "procedure": {
+            "_type": "reference",
+            "_ref": "procedure-robotic-prostatectomy"
+        },
+        "phase": "early",
+        "title": "Going Home",
+        "normalExperiences": [
+            {
+                "_type": "block",
+                "children": [
+                    {
+                        "_type": "span",
+                        "text": "Most patients are discharged today. Ensure you have your catheter bag secured."
+                    }
+                ]
+            }
+        ],
+        "activities": [
+            {
+                "label": "Short walk indoors",
+                "status": "allowed",
+                "icon": "Footprints"
+            },
+            {
+                "label": "Shower (keep wound dry)",
+                "status": "caution",
+                "icon": "ShowerHead"
+            }
+        ]
+    }
+]

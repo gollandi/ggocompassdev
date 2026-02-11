@@ -1,0 +1,222 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "GGO Compass Recovery Data Variables",
+  "description": "Variable structure for Figma Tokens and CMS integration",
+  "version": "1.0.0",
+  "generatedAt": "2025-10-31T00:00:00Z",
+  
+  "collections": {
+    "recovery-circumcision": {
+      "description": "28-day BAUS-compliant recovery guidance for circumcision",
+      "source": "BAUS/NICE NG128 2024",
+      "groups": ["day-00", "day-01", "...", "day-28"],
+      "variables": [
+        "today-text",
+        "forecast-text",
+        "redflag-text",
+        "nurse-note-text",
+        "nurse-name-text",
+        "why-this-happens-text",
+        "day-title-text"
+      ]
+    },
+    "recovery-turp": {
+      "description": "28-day BAUS-compliant recovery guidance for TURP",
+      "source": "BAUS 'After Your TURP' leaflet (2024)",
+      "groups": ["day-00", "day-01", "...", "day-28"],
+      "variables": [
+        "today-text",
+        "forecast-text",
+        "redflag-text",
+        "nurse-note-text",
+        "nurse-name-text",
+        "why-this-happens-text",
+        "day-title-text"
+      ]
+    },
+    "recovery-varicocele-repair": {
+      "description": "Key milestone recovery guidance for varicocele repair",
+      "source": "BAUS/NICE Clinical Guidelines 2024",
+      "groups": ["day-00", "day-01", "day-03", "day-07", "day-14", "day-28"],
+      "variables": [
+        "today-text",
+        "forecast-text",
+        "redflag-text",
+        "nurse-note-text",
+        "nurse-name-text",
+        "why-this-happens-text",
+        "day-title-text"
+      ]
+    },
+    "recovery-hydrocele-repair": {
+      "description": "Generic fallback recovery guidance",
+      "source": "GGO Med Standard Recovery Protocol",
+      "groups": ["day-00", "day-01", "day-07", "day-14", "day-28"],
+      "variables": [
+        "today-text",
+        "forecast-text",
+        "redflag-text",
+        "nurse-note-text",
+        "nurse-name-text",
+        "why-this-happens-text",
+        "day-title-text"
+      ]
+    }
+  },
+
+  "emotion": {
+    "description": "Thematic colour variables for context-aware UI",
+    "variables": {
+      "emotion-normal": {
+        "value": "#00BE92",
+        "type": "color",
+        "description": "Base reassurance card (Teal)"
+      },
+      "emotion-progress": {
+        "value": "#E5C07B",
+        "type": "color",
+        "description": "Milestone day highlight (Gold)"
+      },
+      "emotion-alert": {
+        "value": "#DC2626",
+        "type": "color",
+        "description": "Red-flag warning strip"
+      },
+      "emotion-calm-bg": {
+        "value": "linear-gradient(180deg, #E6FDF8 0%, #FFFFFF 100%)",
+        "type": "gradient",
+        "description": "Default card background"
+      },
+      "emotion-reassurance-bg": {
+        "value": "linear-gradient(135deg, #1E3A5B 0%, #00856D 100%)",
+        "type": "gradient",
+        "description": "Navy to dark teal (today card)"
+      },
+      "emotion-milestone-bg": {
+        "value": "linear-gradient(135deg, #C4941F 0%, #8B6914 100%)",
+        "type": "gradient",
+        "description": "Dark gold (milestone today card)"
+      }
+    }
+  },
+
+  "animation": {
+    "description": "Day-progress driven motion hooks",
+    "functions": {
+      "compass-needle-rotation": {
+        "formula": "45 + (day / 28) * 40",
+        "range": "45° to 85°",
+        "description": "Needle rotates from SW to SE as recovery progresses"
+      },
+      "progress-bar-width": {
+        "formula": "(day / totalDays) * 100 + '%'",
+        "range": "0% to 100%",
+        "description": "Linear progress indicator"
+      }
+    },
+    "constants": {
+      "card-scale-milestone": 1.02,
+      "transition-breathing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "duration-fast": "0.2s",
+      "duration-normal": "0.4s",
+      "duration-slow": "0.6s"
+    }
+  },
+
+  "componentVariants": {
+    "description": "Variant properties for Daily Recovery Card component",
+    "properties": {
+      "Procedure": [
+        "Circumcision",
+        "TURP",
+        "Varicocele Repair",
+        "Frenuloplasty",
+        "Preputioplasty",
+        "Micro-TESE",
+        "TESE",
+        "TURBT",
+        "Cystoscopy & Biopsy",
+        "TP MRI Fusion Biopsy",
+        "Hydrocele Repair",
+        "Penile Doppler Ultrasound",
+        "Other Procedure"
+      ],
+      "Day": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28],
+      "Mood": ["Low", "Neutral", "High"],
+      "Theme": ["Light", "Dark", "High Contrast"],
+      "Forecast": ["True", "False"],
+      "Redflag": ["Expanded", "Collapsed"]
+    }
+  },
+
+  "namingConventions": {
+    "collection": "recovery-[procedure]",
+    "group": "day-[number]",
+    "variable": "[field]-text",
+    "fullPath": "recovery-[procedure]/day-[number]/[field]-text",
+    "examples": [
+      "recovery-turp/day-00/today-text",
+      "recovery-circumcision/day-14/forecast-text",
+      "recovery-turp/day-07/redflag-text",
+      "recovery-varicocele-repair/day-28/nurse-note-text"
+    ]
+  },
+
+  "fallbackLogic": {
+    "description": "Smart fallback ensures Compass always delivers reassurance",
+    "priority": [
+      "1. Exact match: recovery[procedure].days[day]",
+      "2. Generic fallback: recovery['generic'].days[day]",
+      "3. Closest day match in generic",
+      "4. Ultimate fallback: 'You may feel mild soreness today.'"
+    ],
+    "implementation": {
+      "javascript": "function getRecoveryText(procedure, day) {\n  const data = recovery[procedure]?.days[day];\n  if (!data) {\n    return recovery['generic'].days[day] || recovery['generic'].days['default'];\n  }\n  return data;\n}",
+      "typescript": "function getRecoveryText(\n  procedure: string,\n  day: number\n): RecoveryDayVariables | null {\n  const procedureData = procedureRecoveryData[procedure as ProcedureType];\n  if (procedureData) {\n    const dayData = procedureData.find((d) => d.day === day);\n    if (dayData) return convertToVariables(dayData);\n  }\n  return getFallback(day);\n}"
+    }
+  },
+
+  "metadata": {
+    "description": "Governance metadata for clinical content versioning",
+    "schema": {
+      "source": "string (e.g., 'BAUS/NICE NG128 2024')",
+      "lastReviewed": "ISO 8601 date (e.g., '2025-10-31')",
+      "author": "string (e.g., 'GGO Med Clinical Team')",
+      "reviewer": "string (e.g., 'FRCS Urol Governance Lead')",
+      "version": "semver (e.g., '1.2.0')",
+      "readingLevel": "string (e.g., 'Year 7 (UK)')",
+      "fleschScore": "number (e.g., 74)"
+    },
+    "purpose": "Ensures every content update remains auditable for PIF Tick compliance"
+  },
+
+  "accessibility": {
+    "readingLevel": "Year 7 (UK) / Flesch Score 72-75",
+    "plainLanguage": "Toggle available (Concise vs. Warm & Friendly)",
+    "reducedMotion": "Animation hooks respect user preferences",
+    "highContrast": "Theme variant ensures 7:1 contrast ratio",
+    "largerText": "Text scales from 18px to 22px base size"
+  },
+
+  "exportFormats": {
+    "figmaTokens": {
+      "filename": "ggo-compass-figma-tokens.json",
+      "description": "Import into Figma via Tokens Studio plugin",
+      "structure": "Nested collections with type annotations"
+    },
+    "serverAPI": {
+      "filename": "ggo-compass-server-api.json",
+      "description": "Use in Carebit server-side logic",
+      "structure": "Flat array of procedures with metadata and days"
+    }
+  },
+
+  "integrationEndpoints": {
+    "suggested": [
+      "GET /api/recovery/:procedure/:day",
+      "GET /api/recovery/:procedure/metadata",
+      "GET /api/procedures",
+      "GET /api/variables/export"
+    ]
+  }
+}

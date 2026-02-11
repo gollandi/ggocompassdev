@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <title>GGO Med – Visual & Image Creation Guidelines</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ggomed-teal: #00EEB6;
+      --ggomed-soft-blue: #E3EEFD;
+      --ggomed-charcoal: #4B4B4B;
+      --ggomed-mint: #B5FFE7;
+      --ggomed-black: #111111;
+      --ggomed-blue: #3208F5;
+      --ggomed-radius-lg: 18px;
+      --ggomed-radius-xl: 24px;
+      --ggomed-shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f7f9ff;
+      color: var(--ggomed-charcoal);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--ggomed-blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+
+    header.ggomed-header {
+      background: #ffffff;
+      border-radius: var(--ggomed-radius-xl);
+      box-shadow: var(--ggomed-shadow-soft);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ggomed-header::after {
+      content: "";
+      position: absolute;
+      inset: auto -40px -32px auto;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle at top, rgba(0, 238, 182, 0.25), transparent 70%);
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .ggomed-brand-block {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      z-index: 1;
+    }
+
+    .ggomed-logo-circle {
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--ggomed-teal), var(--ggomed-mint));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ggomed-black);
+      font-weight: 800;
+      font-size: 24px;
+      letter-spacing: 0.02em;
+    }
+
+    .ggomed-brand-text h1 {
+      margin: 0;
+      font-size: 1.4rem;
+      color: var(--ggomed-black);
+      font-weight: 700;
+    }
+
+    .ggomed-brand-text p {
+      margin: 2px 0 0;
+      font-size: 0.9rem;
+      color: var(--ggomed-charcoal);
+    }
+
+    .ggomed-header-meta {
+      text-align: right;
+      font-size: 0.8rem;
+      color: var(--ggomed-charcoal);
+      z-index: 1;
+    }
+
+    .ggomed-header-meta strong {
+      color: var(--ggomed-black);
+    }
+
+    .ggomed-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--ggomed-soft-blue);
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 0.8rem;
+    }
+
+    .ggomed-pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--ggomed-teal);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(220px, 1.1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 880px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .content-card {
+      background: #ffffff;
+      border-radius: var(--ggomed-radius-xl);
+      box-shadow: var(--ggomed-shadow-soft);
+      padding: 24px 22px 26px;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 20px;
+      align-self: flex-start;
+    }
+
+    .sidebar-card {
+      background: #ffffff;
+      border-radius: var(--ggomed-radius-xl);
+      box-shadow: var(--ggomed-shadow-soft);
+      padding: 18px 18px 20px;
+      font-size: 0.88rem;
+    }
+
+    h2.section-title {
+      font-size: 1.15rem;
+      color: var(--ggomed-black);
+      margin: 0 0 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2.section-title span.badge {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ggomed-black);
+      background: var(--ggomed-mint);
+      border-radius: 999px;
+      padding: 3px 9px;
+    }
+
+    h3 {
+      font-size: 1rem;
+      color: var(--ggomed-black);
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+
+    h4 {
+      font-size: 0.95rem;
+      color: var(--ggomed-black);
+      margin-top: 14px;
+      margin-bottom: 6px;
+    }
+
+    p {
+      margin: 4px 0 10px;
+      font-size: 0.9rem;
+    }
+
+    ul, ol {
+      margin: 4px 0 10px 20px;
+      padding: 0;
+      font-size: 0.9rem;
+    }
+
+    li + li {
+      margin-top: 3px;
+    }
+
+    .section-block {
+      border-radius: var(--ggomed-radius-lg);
+      background: #f9fbff;
+      padding: 18px 16px 18px;
+      border: 1px solid #e1e7fb;
+      margin-bottom: 18px;
+    }
+
+    .section-block:nth-of-type(odd) {
+      background: var(--ggomed-soft-blue);
+      border-color: rgba(0, 238, 182, 0.15);
+    }
+
+    .section-meta {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--ggomed-blue);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .pill-list {
+      list-style: none;
+      margin: 6px 0 0;
+      padding: 0;
+    }
+
+    .pill-list li {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #f3f6ff;
+      border-radius: 999px;
+      padding: 4px 9px;
+      margin: 3px 4px 0 0;
+      font-size: 0.78rem;
+    }
+
+    .pill-list li span.dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--ggomed-teal);
+    }
+
+    .toc-title {
+      font-weight: 600;
+      color: var(--ggomed-black);
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+    }
+
+    .toc-list {
+      list-style: none;
+      margin: 0;
+      padding-left: 0;
+    }
+
+    .toc-list li {
+      margin: 3px 0;
+    }
+
+    .toc-list a {
+      color: var(--ggomed-charcoal);
+      font-size: 0.86rem;
+    }
+
+    .toc-list a:hover {
+      color: var(--ggomed-blue);
+    }
+
+    .sidebar-tag {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed #dde4ff;
+    }
+
+    code {
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.8rem;
+      background: #f3f5ff;
+      padding: 2px 5px;
+      border-radius: 6px;
+    }
+
+    .tag-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #f3f5ff;
+      font-size: 0.78rem;
+      gap: 5px;
+      margin: 2px 4px 0 0;
+    }
+
+    .tag-pill strong {
+      font-weight: 600;
+      color: var(--ggomed-black);
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="ggomed-header">
+      <div class="ggomed-brand-block">
+        <div class="ggomed-logo-circle">
+          G
+        </div>
+        <div class="ggomed-brand-text">
+          <h1>GGO Med – Visual & Image Creation Guidelines</h1>
+          <p>Authority, precision and inclusion for sensitive men’s health content.</p>
+        </div>
+      </div>
+      <div class="ggomed-header-meta">
+        <div class="ggomed-pill">
+          <span class="ggomed-pill-dot"></span>
+          <span>Internal Brand Toolkit</span>
+        </div>
+        <div style="margin-top: 6px;">
+          <strong>Owner:</strong> GGO Med Clinic<br />
+          <strong>Scope:</strong> All illustrations, infographics & social media visuals
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- MAIN CONTENT -->
+      <section class="content-card">
+        <!-- 1. Medical Illustration Prompt -->
+        <article id="sec-1" class="section-block">
+          <div class="section-meta">Workflow A · Core Prompt</div>
+          <h2 class="section-title">
+            1. Medical Illustration Creation Prompt
+            <span class="badge">Anatomy / Condition</span>
+          </h2>
+          <h3>Purpose</h3>
+          <p>
+            Create a medically accurate yet patient-friendly illustration of <strong>[SPECIFIC ANATOMY/CONDITION]</strong> for use in GGO Med patient education.
+          </p>
+
+          <h3>Visual Specifications</h3>
+          <ul>
+            <li><strong>Style:</strong> Clean, modern medical-textbook vector illustration.</li>
+            <li><strong>Colour palette:</strong>
+              <ul>
+                <li>Teal <code>#00EEB6</code> – primary anatomical elements.</li>
+                <li>Deep charcoal <code>#4B4B4B</code> – outlines, labelling, secondary details.</li>
+                <li>Soft blue <code>#E3EEFD</code> – background or gentle highlights.</li>
+                <li>Mint fresh <code>#B5FFE7</code> – wellness/positive accents as needed.</li>
+              </ul>
+            </li>
+            <li><strong>Design characteristics:</strong> simplified but anatomically correct, rounded and soft edges, professional and approachable, with clear space for labels.</li>
+            <li><strong>Background:</strong> clean white or very soft blue (<code>#E3EEFD</code>).</li>
+          </ul>
+
+          <h3>Output Requirements</h3>
+          <ul>
+            <li>High-resolution image suitable for print and web.</li>
+            <li>Vector or vector-style artwork preferred for scalability.</li>
+            <li>Strict adherence to GGO Med brand colours and tone.</li>
+          </ul>
+        </article>
+
+        <!-- 2. Infographic Prompt -->
+        <article id="sec-2" class="section-block">
+          <div class="section-meta">Workflow A · Core Prompt</div>
+          <h2 class="section-title">
+            2. Infographic Creation Prompt
+            <span class="badge">Process / Journey</span>
+          </h2>
+
+          <h3>Purpose</h3>
+          <p>
+            Create an infographic explaining <strong>[SPECIFIC MEDICAL PROCESS / PATIENT JOURNEY]</strong>.
+          </p>
+
+          <h3>Design Requirements</h3>
+          <ul>
+            <li><strong>Layout:</strong> Clear flow (left-to-right or top-to-bottom).</li>
+            <li><strong>Colour scheme:</strong>
+              <ul>
+                <li>Teal <code>#00EEB6</code> – primary elements and connectors.</li>
+                <li>Soft blue <code>#E3EEFD</code> – background panels.</li>
+                <li>Charcoal <code>#4B4B4B</code> – text sections.</li>
+                <li>Mint <code>#B5FFE7</code> – positive/success states.</li>
+              </ul>
+            </li>
+            <li><strong>Icons:</strong> simple, rounded, modern medical icons.</li>
+            <li><strong>Typography:</strong> clear hierarchy for headings, key points and explanatory text.</li>
+            <li><strong>Aesthetic:</strong> professional, calm and patient-centred, with generous white space and soft curves.</li>
+          </ul>
+
+          <h3>Brand Compliance</h3>
+          <p>
+            The infographic must be suitable for sensitive urology and men’s health topics, reflect GGO Med’s authoritative yet empathetic voice, and avoid graphic or sensational imagery.
+          </p>
+        </article>
+
+        <!-- 3. Website Hero -->
+        <article id="sec-3" class="section-block">
+          <div class="section-meta">Workflow A · Web Assets</div>
+          <h2 class="section-title">
+            3. Website Hero Image Prompt
+            <span class="badge">16:9 Hero</span>
+          </h2>
+
+          <h3>Purpose</h3>
+          <p>
+            Create a contemporary website hero image for <strong>[SPECIFIC MEDICAL TOPIC/SERVICE]</strong>.
+          </p>
+
+          <h3>Specifications</h3>
+          <ul>
+            <li><strong>Format:</strong> 16:9 landscape hero.</li>
+            <li><strong>Colour palette:</strong>
+              <ul>
+                <li>Soft blue <code>#E3EEFD</code> to white gradient background.</li>
+                <li>Teal <code>#00EEB6</code> accents.</li>
+                <li>Charcoal <code>#4B4B4B</code> for any text areas.</li>
+              </ul>
+            </li>
+            <li><strong>Design elements:</strong> abstract medical forms or subtle anatomical references, soft organic shapes (no harsh geometry).</li>
+            <li><strong>Mood:</strong> professional, reassuring, approachable and trustworthy.</li>
+            <li><strong>Usability:</strong> generous white space for headline, subtext and call-to-action buttons.</li>
+          </ul>
+        </article>
+
+        <!-- 4. Social Graphic -->
+        <article id="sec-4" class="section-block">
+          <div class="section-meta">Workflow A · Social Media</div>
+          <h2 class="section-title">
+            4. Social Media Graphic Prompt
+            <span class="badge">Platform-Specific</span>
+          </h2>
+
+          <h3>Purpose</h3>
+          <p>
+            Create a social media graphic for <strong>[PLATFORM]</strong> about <strong>[TOPIC]</strong>.
+          </p>
+
+          <h3>Specifications</h3>
+          <ul>
+            <li><strong>Formats:</strong> 1:1 square, 9:16 story, or 1.91:1 banner as required.</li>
+            <li><strong>Background:</strong> soft blue (<code>#E3EEFD</code>) or white.</li>
+            <li><strong>Primary elements:</strong> teal (<code>#00EEB6</code>).</li>
+            <li><strong>Text areas:</strong> charcoal (<code>#4B4B4B</code>) on light backgrounds.</li>
+            <li><strong>Accents:</strong> mint (<code>#B5FFE7</code>) for positive highlights.</li>
+          </ul>
+
+          <h3>Design Elements</h3>
+          <ul>
+            <li>Clean, legible type hierarchy.</li>
+            <li>Rounded containers and cards.</li>
+            <li>Modern medical icons when relevant.</li>
+            <li>Space for GGO Med logo/branding.</li>
+            <li>Professional but engaging layout, compliant with platform best practice for healthcare content.</li>
+          </ul>
+        </article>
+
+        <!-- 5. Patient Education Infographic -->
+        <article id="sec-5" class="section-block">
+          <div class="section-meta">Workflow A · Education</div>
+          <h2 class="section-title">
+            5. Patient Education Infographic Prompt
+            <span class="badge">A4 Print</span>
+          </h2>
+
+          <h3>Purpose</h3>
+          <p>
+            Create a patient-friendly educational infographic about <strong>[SPECIFIC CONDITION/TREATMENT]</strong>.
+          </p>
+
+          <h3>Content Structure</h3>
+          <ul>
+            <li>Clear title area in charcoal (<code>#4B4B4B</code>).</li>
+            <li>Section dividers in teal (<code>#00EEB6</code>).</li>
+            <li>Information boxes on soft blue backgrounds (<code>#E3EEFD</code>).</li>
+            <li>Positive outcome indicators in mint (<code>#B5FFE7</code>).</li>
+            <li>Call-to-action areas and “next steps” in teal (<code>#00EEB6</code>).</li>
+          </ul>
+
+          <h3>Visual Approach</h3>
+          <ul>
+            <li>Clear information hierarchy and stepwise progression where applicable.</li>
+            <li>Reassuring, educational tone with simplified anatomical references.</li>
+            <li>Absolutely no graphic surgical imagery.</li>
+          </ul>
+
+          <h3>Layout Requirements</h3>
+          <ul>
+            <li>A4 proportion for printing and PDF use.</li>
+            <li>Generous margins and white space.</li>
+            <li>Logical reading flow (top-to-bottom and left-to-right).</li>
+            <li>Space reserved for GGO Med contact information and website link.</li>
+          </ul>
+        </article>
+
+        <!-- 6. Brand Compliance Review -->
+        <article id="sec-6" class="section-block">
+          <div class="section-meta">Workflow A · QA Step</div>
+          <h2 class="section-title">
+            6. Brand Compliance Review Prompt
+            <span class="badge">Checklist</span>
+          </h2>
+
+          <h3>Brand Colour Compliance</h3>
+          <ul>
+            <li>Confirm that only approved GGO Med colours are used:
+              <code>#00EEB6</code>, <code>#E3EEFD</code>, <code>#4B4B4B</code>, <code>#B5FFE7</code>, <code>#111111</code>, <code>#3208F5</code>.
+            </li>
+            <li>Ensure teal (<code>#00EEB6</code>) highlights key elements/focal points.</li>
+            <li>Soft blue (<code>#E3EEFD</code>) appears mainly as background or gentle highlight.</li>
+          </ul>
+
+          <h3>Visual Style Compliance</h3>
+          <ul>
+            <li>Professional yet approachable aesthetic maintained.</li>
+            <li>Rounded and soft corners used consistently.</li>
+            <li>Ample white space around key content.</li>
+            <li>No harsh, overly clinical or intimidating visuals.</li>
+            <li>Explicit suitability for sensitive men’s health topics.</li>
+          </ul>
+
+          <h3>Brand Consistency</h3>
+          <ul>
+            <li>Aligned with contemporary healthcare branding.</li>
+            <li>Visuals would sit comfortably alongside existing GGO Med assets.</li>
+            <li>Overall tone remains trustworthy, empathetic and evidence-based.</li>
+          </ul>
+
+          <p>
+            Where elements fail this audit, specify <strong>exact modifications</strong> (colour changes, spacing, edge rounding, icon style updates) required to restore full brand compliance.
+          </p>
+        </article>
+
+        <!-- 7. Image Modification Prompt -->
+        <article id="sec-7" class="section-block">
+          <div class="section-meta">Workflow A · Revision</div>
+          <h2 class="section-title">
+            7. Image Modification Prompt
+            <span class="badge">Refinement</span>
+          </h2>
+
+          <h3>Colour Adjustments</h3>
+          <ul>
+            <li>Change specified elements to precise GGO Med colours (e.g. “Change [element] to teal <code>#00EEB6</code>”).</li>
+            <li>Ensure primary focal areas use teal for emphasis.</li>
+            <li>Soften any overly harsh colour contrasts.</li>
+          </ul>
+
+          <h3>Style Refinements</h3>
+          <ul>
+            <li>Increase corner rounding where necessary.</li>
+            <li>Add white space around crowded elements.</li>
+            <li>Refine shapes and iconography to feel more approachable while remaining professional.</li>
+          </ul>
+
+          <h3>Layout Improvements</h3>
+          <p>
+            Specify concrete layout changes (e.g. re-aligning sections, adjusting hierarchy, balancing columns) whilst preserving all brand rules.
+          </p>
+        </article>
+
+        <!-- 8. Patient Journey Infographic -->
+        <article id="sec-8" class="section-block">
+          <div class="section-meta">Workflow A · Journey Design</div>
+          <h2 class="section-title">
+            8. Patient Journey Infographic Prompt
+            <span class="badge">Horizontal Flow</span>
+          </h2>
+
+          <h3>Journey Stages</h3>
+          <ol>
+            <li>Initial concern or symptoms.</li>
+            <li>Decision to seek help.</li>
+            <li>Booking a consultation.</li>
+            <li>Assessment appointment.</li>
+            <li>Treatment planning.</li>
+            <li>Treatment implementation.</li>
+            <li>Follow-up care.</li>
+            <li>Positive outcomes and long-term support.</li>
+          </ol>
+
+          <h3>Visual Requirements</h3>
+          <ul>
+            <li>Horizontal flow with rounded containers for each stage.</li>
+            <li>Teal (<code>#00EEB6</code>) connecting arrows or lines.</li>
+            <li>Soft blue (<code>#E3EEFD</code>) stage backgrounds.</li>
+            <li>Mint (<code>#B5FFE7</code>) for outcome and reassurance elements.</li>
+            <li>Text in charcoal (<code>#4B4B4B</code>).</li>
+            <li>Clean white background with subtle supporting elements only.</li>
+          </ul>
+
+          <h3>Brand Approach</h3>
+          <p>
+            Emphasise expert support and confidence-building at each stage, reflecting GGO Med’s role as a calm, specialist partner throughout the patient journey.
+          </p>
+        </article>
+
+        <!-- 9. Workflow B – Anatomical Accuracy -->
+        <article id="sec-9" class="section-block">
+          <div class="section-meta">Workflow B · Anatomy Focus</div>
+          <h2 class="section-title">
+            9. Workflow B – Anatomical Accuracy Brief
+            <span class="badge">Medical Detail</span>
+          </h2>
+
+          <h3>Medical Requirements</h3>
+          <ul>
+            <li>Anatomically accurate representation of <strong>[SPECIFIC CONDITION/ANATOMY]</strong>.</li>
+            <li>Simplified for patient understanding (no unnecessary complexity).</li>
+            <li>Highlight required medical details (e.g. plaques, narrowed vessels, affected structures).</li>
+            <li>Suitable as a visual aid during consultant–patient discussion.</li>
+          </ul>
+
+          <h3>Brand Visual Requirements</h3>
+          <ul>
+            <li>Teal (<code>#00EEB6</code>) for primary structures.</li>
+            <li>Soft blue (<code>#E3EEFD</code>) or white background.</li>
+            <li>Charcoal (<code>#4B4B4B</code>) outlining and labelling.</li>
+            <li>Minimalist, modern medical style with rounded, soft edges.</li>
+          </ul>
+
+          <h3>Patient Perspective</h3>
+          <ul>
+            <li>Educational and reassuring rather than alarming.</li>
+            <li>Avoids graphic realism or anything that may provoke anxiety.</li>
+            <li>Explicitly suitable for sensitive topics within men’s health.</li>
+          </ul>
+        </article>
+
+        <!-- 10. Workflow B – Educational Enhancement -->
+        <article id="sec-10" class="section-block">
+          <div class="section-meta">Workflow B · Educational Layer</div>
+          <h2 class="section-title">
+            10. Educational Enhancement for Illustrations
+            <span class="badge">Labelling</span>
+          </h2>
+
+          <h3>Enhancement Requirements</h3>
+          <ul>
+            <li>Include clear visual areas for labels and annotations.</li>
+            <li>Use visual hierarchy (size, weight, position) to guide the eye through the diagram.</li>
+            <li>Add subtle cues (e.g. soft highlighting, arrows) for key structures and problem areas.</li>
+            <li>Ensure the design actively supports the consultant’s verbal explanation.</li>
+          </ul>
+        </article>
+
+        <!-- 11. File Naming -->
+        <article id="sec-11" class="section-block">
+          <div class="section-meta">Phase 6 · File Management</div>
+          <h2 class="section-title">
+            11. File Naming Convention System
+            <span class="badge">Consistency</span>
+          </h2>
+
+          <p>Use the following naming pattern for all visual assets:</p>
+          <p><code>GGOMed_[ContentType]_[Topic]_[Date]_[Version]</code></p>
+
+          <h3>Examples</h3>
+          <ul>
+            <li><code>GGOMed_Infographic_VaricoceleJourney_2024Jan15_v1.png</code></li>
+            <li><code>GGOMed_Illustration_ProstatectomyProcedure_2024Jan15_v2.png</code></li>
+            <li><code>GGOMed_SocialMedia_EDEducation_Instagram_2024Jan15_v1.png</code></li>
+            <li><code>GGOMed_WebBanner_FertilityConsultation_2024Jan15_v1.png</code></li>
+          </ul>
+        </article>
+
+        <!-- 12. Quality Archive Metadata -->
+        <article id="sec-12" class="section-block">
+          <div class="section-meta">Phase 6 · Archiving</div>
+          <h2 class="section-title">
+            12. Quality Archive Metadata Prompt
+            <span class="badge">Documentation</span>
+          </h2>
+
+          <p>For each final image, record the following:</p>
+
+          <h3>Technical Specifications</h3>
+          <ul>
+            <li>Dimensions and resolution.</li>
+            <li>Primary colours used (with hex codes).</li>
+            <li>Best usage recommendations (web, print, social media etc.).</li>
+          </ul>
+
+          <h3>Content Description</h3>
+          <ul>
+            <li>Brief description of visual elements.</li>
+            <li>Intended use case (e.g. ED explainer, Peyronie’s landing page).</li>
+            <li>Key brand-compliance features (colour, style, sensitivity handling).</li>
+          </ul>
+
+          <h3>Usage Notes</h3>
+          <ul>
+            <li>Specific application suggestions (hero, inline illustration, downloadable PDF).</li>
+            <li>Accessibility considerations (contrast, text size, complexity).</li>
+            <li>Potential modifications for alternative formats.</li>
+          </ul>
+        </article>
+
+        <!-- 13. Advanced Brand Consistency -->
+        <article id="sec-13" class="section-block">
+          <div class="section-meta">Phase 7 · Consistency</div>
+          <h2 class="section-title">
+            13. Advanced Brand Consistency Prompt
+            <span class="badge">Style Matching</span>
+          </h2>
+
+          <p>
+            When creating new content types, ensure they are visually indistinguishable from established GGO Med materials in:
+          </p>
+
+          <ul>
+            <li>Colour palette application (same usage of teal, soft blue, charcoal, mint).</li>
+            <li>Illustration/design style (minimalist, rounded, calm, clinical-accurate).</li>
+            <li>Visual hierarchy (headings, subheadings, diagrams, key callouts).</li>
+            <li>White space and spacing patterns.</li>
+            <li>Professional yet approachable brand personality.</li>
+            <li>Accessibility and readability standards.</li>
+          </ul>
+        </article>
+
+        <!-- 14. Multi-format Adaptation -->
+        <article id="sec-14" class="section-block">
+          <div class="section-meta">Phase 7 · Adaptation</div>
+          <h2 class="section-title">
+            14. Multi-Format Adaptation Prompt
+            <span class="badge">Responsive Design</span>
+          </h2>
+
+          <p>Create optimised variations for the following formats:</p>
+          <ol>
+            <li>Website hero – <strong>16:9</strong> landscape.</li>
+            <li>Social media square – <strong>1:1</strong>.</li>
+            <li>Social story – <strong>9:16</strong> vertical.</li>
+            <li>Print materials – <strong>A4</strong> proportion.</li>
+          </ol>
+
+          <h3>Adaptation Requirements</h3>
+          <ul>
+            <li>Maintain consistent brand colours and key visual elements.</li>
+            <li>Preserve core message and illustration focus in all versions.</li>
+            <li>Optimise text sizing and density for each format.</li>
+            <li>Ensure immediate brand recognition (logo, palette, style).</li>
+          </ul>
+        </article>
+
+        <!-- 15. Final Brand Audit & Implementation Checklist -->
+        <article id="sec-15" class="section-block">
+          <div class="section-meta">Phase 8–9 · Final QA</div>
+          <h2 class="section-title">
+            15. Final Brand Audit & Implementation Checklist
+            <span class="badge">Pre-Release</span>
+          </h2>
+
+          <h3>Visual Brand Compliance</h3>
+          <ul>
+            <li>Colour palette accuracy (exact hex codes used correctly).</li>
+            <li>Professional yet approachable aesthetic.</li>
+            <li>Appropriate use of white space.</li>
+            <li>Soft, rounded shapes and elements.</li>
+            <li>Contemporary, high-end healthcare feel.</li>
+          </ul>
+
+          <h3>Content Appropriateness</h3>
+          <ul>
+            <li>Suitable for sensitive men’s health topics.</li>
+            <li>Maintains dignity and respect for patients.</li>
+            <li>Medically accurate and evidence-aligned.</li>
+            <li>Educational and reassuring tone throughout.</li>
+            <li>Appropriate for the intended audience and context.</li>
+          </ul>
+
+          <h3>Technical Quality</h3>
+          <ul>
+            <li>High resolution with clear details.</li>
+            <li>Suitable for the intended use (web/print/social).</li>
+            <li>Accessibility considerations met (contrast, legibility).</li>
+            <li>Scalable to different sizes without quality loss.</li>
+            <li>Compatible across digital and print channels.</li>
+          </ul>
+
+          <h3>Brand Alignment</h3>
+          <ul>
+            <li>Reflects GGO Med’s expertise and empathy.</li>
+            <li>Consistent with existing brand assets and strategy.</li>
+            <li>Supports patient journey, experience and trust-building.</li>
+          </ul>
+
+          <h3>Implementation Checklist (Before Use)</h3>
+          <ul>
+            <li>Verify all colours match official hex codes.</li>
+            <li>Confirm aesthetic is professional but warm.</li>
+            <li>Check sensitivity and appropriateness for topic.</li>
+            <li>Ensure text and visual contrast meet accessibility standards.</li>
+            <li>Test scalability for all planned sizes.</li>
+            <li>Confirm alignment with brand voice and values.</li>
+            <li>Review technical quality (file format, compression, responsiveness).</li>
+            <li>Name the file following GGO Med convention.</li>
+            <li>Archive with full metadata and usage notes.</li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar-card">
+          <div class="toc-title">On this page</div>
+          <ul class="toc-list">
+            <li><a href="#sec-1">1. Medical Illustration Prompt</a></li>
+            <li><a href="#sec-2">2. Infographic Creation</a></li>
+            <li><a href="#sec-3">3. Website Hero Image</a></li>
+            <li><a href="#sec-4">4. Social Media Graphic</a></li>
+            <li><a href="#sec-5">5. Patient Education Infographic</a></li>
+            <li><a href="#sec-6">6. Brand Compliance Review</a></li>
+            <li><a href="#sec-7">7. Image Modification</a></li>
+            <li><a href="#sec-8">8. Patient Journey Infographic</a></li>
+            <li><a href="#sec-9">9. Workflow B – Anatomical Brief</a></li>
+            <li><a href="#sec-10">10. Educational Enhancement</a></li>
+            <li><a href="#sec-11">11. File Naming</a></li>
+            <li><a href="#sec-12">12. Archive Metadata</a></li>
+            <li><a href="#sec-13">13. Brand Consistency</a></li>
+            <li><a href="#sec-14">14. Multi-format Adaptation</a></li>
+            <li><a href="#sec-15">15. Final Brand Audit</a></li>
+          </ul>
+
+          <div class="sidebar-tag">
+            <div class="toc-title">Brand palette</div>
+            <div class="tag-pill">
+              <span style="width:10px;height:10px;border-radius:999px;background:var(--ggomed-teal);"></span>
+              <strong>Teal</strong> #00EEB6
+            </div>
+            <div class="tag-pill">
+              <span style="width:10px;height:10px;border-radius:999px;background:var(--ggomed-soft-blue);"></span>
+              <strong>Soft Blue</strong> #E3EEFD
+            </div>
+            <div class="tag-pill">
+              <span style="width:10px;height:10px;border-radius:999px;background:var(--ggomed-charcoal);"></span>
+              <strong>Charcoal</strong> #4B4B4B
+            </div>
+            <div class="tag-pill">
+              <span style="width:10px;height:10px;border-radius:999px;background:var(--ggomed-mint);"></span>
+              <strong>Mint</strong> #B5FFE7
+            </div>
+            <div class="tag-pill">
+              <span style="width:10px;height:10px;border-radius:999px;background:var(--ggomed-black);"></span>
+              <strong>Black</strong> #111111
+            </div>
+            <div class="tag-pill">
+              <span style="width:10px;height:10px;border-radius:999px;background:var(--ggomed-blue);"></span>
+              <strong>Clinical Blue</strong> #3208F5
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+  </div>
+</body>
+</html>

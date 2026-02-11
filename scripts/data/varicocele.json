@@ -1,0 +1,42 @@
+{
+    "_id": "procedure-varicocele",
+    "_type": "ggoProcedure",
+    "name": "Microsurgical Varicocele Correction",
+    "slug": {
+        "_type": "slug",
+        "current": "varicocele-correction"
+    },
+    "category": "urology",
+    "recoveryType": "day-case",
+    "totalRecoveryDays": 21,
+    "description": "Microsurgical repair of enlarged veins in the scrotum to improve fertility and reduce discomfort.",
+    "preOperativeInstructions": "Fast for 6 hours. Arrange transport home as you cannot drive after anaesthetic.",
+    "postOperativeInstructions": "Rest for 48 hours. Wear supportive underwear. Avoid heavy lifting and strenuous activity for 2 weeks, and avoid sexual activity during this period.",
+    "expectedOutcomes": "Reduced scrotal discomfort. Fertility-related improvements may take 3-6 months and vary between individuals.",
+    "uiCustomization": {
+        "welcomeTitle": "Your Varicocele Surgery Recovery",
+        "welcomeBody": "This procedure has excellent success rates for improving fertility.",
+        "recoveryIntroTitle": "Your 3-week recovery plan",
+        "checklistOverrides": [
+            {
+                "key": "scrotal_support",
+                "text": "Wear scrotal support garment"
+            },
+            {
+                "key": "ice_pack",
+                "text": "Apply ice pack for 20 minutes"
+            }
+        ]
+    },
+    "commonConcerns": [
+        {
+            "concern": "When can I return to work?",
+            "response": "Most patients return to desk work after 3-5 days. Physical work may require 2 weeks."
+        },
+        {
+            "concern": "Will this improve my fertility?",
+            "response": "Some men see improved sperm parameters after surgery, but results vary and can take several months."
+        }
+    ],
+    "isActive": true
+}

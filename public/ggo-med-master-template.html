@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <title>GGO Med Master Template – Brand Canvas</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --teal: #00EEB6;
+      --soft-blue: #E3EEFD;
+      --charcoal: #4B4B4B;
+      --mint: #B5FFE7;
+      --black: #111111;
+      --clinical-blue: #3208F5;
+      --white: #FFFFFF;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--soft-blue);
+      padding: 32px;
+      -webkit-font-smoothing: antialiased;
+      color: var(--charcoal);
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 24px;
+      border: 2px solid var(--soft-blue);
+      padding: 32px 40px 28px 40px;
+      box-shadow: 0 18px 55px rgba(17,17,17,0.10);
+      position: relative;
+      min-height: 1120px; /* approx A4 ratio */
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    /* LOCKED HEADER */
+    .locked-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      min-height: 120px;
+    }
+
+    .logo-placeholder {
+      width: 120px;
+      height: 120px;
+      border-radius: 999px;
+      border: 2px dashed var(--clinical-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      text-transform: uppercase;
+      color: var(--clinical-blue);
+      font-weight: 600;
+    }
+
+    .header-text {
+      text-align: right;
+      line-height: 1.4;
+    }
+
+    .header-line-1 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--black);
+    }
+
+    .header-line-2,
+    .header-line-4 {
+      font-size: 12px;
+      color: var(--charcoal);
+      font-weight: 400;
+    }
+
+    .header-line-3 {
+      font-size: 12px;
+      color: var(--clinical-blue);
+      font-weight: 500;
+    }
+
+    .accent-bar {
+      margin-top: 18px;
+      width: 78%;
+      height: 3px;
+      border-radius: 999px;
+      background: var(--teal);
+    }
+
+    /* SECTION HEADINGS */
+    .section {
+      margin-top: 4px;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--clinical-blue);
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      font-size: 13px;
+      color: var(--charcoal);
+      margin-bottom: 14px;
+    }
+
+    p {
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    ul {
+      padding-left: 18px;
+      margin-top: 4px;
+    }
+
+    li {
+      font-size: 13px;
+      margin-bottom: 3px;
+    }
+
+    li::marker {
+      color: var(--teal);
+    }
+
+    /* BRAND COLOUR SWATCHES */
+    .swatch-row {
+      display: flex;
+      gap: 24px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    .swatch {
+      width: 70px;
+      height: 70px;
+      border-radius: 12px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .swatch-label {
+      font-size: 9px;
+      font-weight: 600;
+      background: rgba(255,255,255,0.85);
+      padding: 3px 6px;
+      border-radius: 999px;
+      margin-bottom: 6px;
+      color: var(--black);
+    }
+
+    .swatch.teal { background: var(--teal); }
+    .swatch.soft-blue { background: var(--soft-blue); }
+    .swatch.charcoal { background: var(--charcoal); }
+    .swatch.mint { background: var(--mint); }
+    .swatch.black { background: var(--black); }
+    .swatch.clinical { background: var(--clinical-blue); }
+    .swatch.charcoal .swatch-label,
+    .swatch.black .swatch-label,
+    .swatch.clinical .swatch-label {
+      background: rgba(17,17,17,0.7);
+      color: var(--white);
+    }
+
+    /* TYPOGRAPHY SYSTEM */
+    .typography-grid {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      gap: 16px 40px;
+      margin-top: 10px;
+    }
+
+    .typo-sample h1 {
+      font-size: 32px;
+      color: var(--black);
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .typo-sample h2 {
+      font-size: 24px;
+      color: var(--black);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .typo-sample h3 {
+      font-size: 18px;
+      color: var(--charcoal);
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .typo-meta {
+      font-size: 11px;
+      color: var(--charcoal);
+    }
+
+    .body-copy-sample {
+      font-size: 13px;
+      color: var(--charcoal);
+      line-height: 1.5;
+      margin-top: 2px;
+    }
+
+    .bullet-sample {
+      margin-top: 8px;
+    }
+
+    .bullet-sample ul {
+      margin-top: 2px;
+    }
+
+    .bullet-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--teal);
+      display: inline-block;
+      margin-right: 6px;
+    }
+
+    .bullet-item {
+      font-size: 12px;
+      color: var(--charcoal);
+      margin-bottom: 2px;
+    }
+
+    /* LAYOUT COMPONENTS */
+    .component-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+
+    .block {
+      border-radius: 24px;
+      padding: 16px 20px;
+      font-size: 12px;
+    }
+
+    .block-title {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+
+    .block-soft {
+      background: var(--soft-blue);
+      color: var(--charcoal);
+    }
+
+    .block-soft .block-title { color: var(--clinical-blue); }
+
+    .block-teal {
+      background: var(--teal);
+      color: var(--white);
+    }
+
+    .block-teal .block-title { color: var(--white); }
+
+    .block-mint {
+      background: var(--mint);
+      color: var(--black);
+    }
+
+    .block-mint .block-title { color: var(--black); }
+
+    .block-outline {
+      background: var(--white);
+      border-radius: 24px;
+      border: 1.5px solid var(--teal);
+      padding: 18px 22px;
+      color: var(--charcoal);
+    }
+
+    .block-outline .block-title { color: var(--clinical-blue); }
+
+    .teal-divider {
+      width: 76%;
+      height: 3px;
+      border-radius: 999px;
+      background: var(--teal);
+      margin: 12px 0;
+    }
+
+    .decor-row {
+      display: flex;
+      gap: 16px;
+      margin-top: 6px;
+    }
+
+    .decor-shape {
+      flex: 1;
+      height: 60px;
+      border-radius: 999px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .decor-soft-wave {
+      background: var(--soft-blue);
+      opacity: 0.9;
+    }
+
+    .decor-soft-wave::after {
+      content: '';
+      position: absolute;
+      width: 180%;
+      height: 180%;
+      background: var(--soft-blue);
+      border-radius: 50%;
+      top: 40%;
+      left: -40%;
+      opacity: 0.4;
+    }
+
+    .decor-mint-blob {
+      background: var(--mint);
+      opacity: 0.85;
+    }
+
+    .decor-mint-blob::after {
+      content: '';
+      position: absolute;
+      width: 160%;
+      height: 140%;
+      background: var(--mint);
+      border-radius: 55% 70% 60% 80%;
+      top: 10%;
+      left: -30%;
+      opacity: 0.5;
+    }
+
+    /* IMAGE PLACEHOLDERS */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    .image-frame {
+      border-radius: 24px;
+      border: 1.5px dashed var(--clinical-blue);
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--clinical-blue);
+      text-align: center;
+      padding: 6px;
+    }
+
+    .ratio-16-9 { aspect-ratio: 16 / 9; }
+    .ratio-1-1 { aspect-ratio: 1 / 1; }
+    .ratio-3-4 { aspect-ratio: 3 / 4; }
+
+    /* ICON STYLE GUIDE */
+    .icon-row {
+      display: flex;
+      gap: 14px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    .icon-card {
+      flex: 0 0 110px;
+      border-radius: 16px;
+      border: 1px solid var(--soft-blue);
+      padding: 8px 10px 10px 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .icon-label {
+      font-size: 10px;
+      color: var(--charcoal);
+      text-align: center;
+    }
+
+    svg.icon {
+      width: 28px;
+      height: 28px;
+      stroke: var(--teal);
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* LOCKED FOOTER */
+    .locked-footer {
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 2px solid var(--teal);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: var(--charcoal);
+    }
+
+    .locked-footer a {
+      color: var(--clinical-blue);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .page-number {
+      font-size: 11px;
+      color: var(--charcoal);
+    }
+
+    @media (max-width: 800px) {
+      .page { padding: 24px 18px 22px 18px; }
+      .locked-header { flex-direction: row; gap: 16px; }
+      .component-grid,
+      .typography-grid {
+        grid-template-columns: 1fr;
+      }
+      .image-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page">
+    <!-- LOCKED HEADER -->
+    <header class="locked-header">
+      <div class="logo-placeholder">
+        GGO Med Logo<br>120 px
+      </div>
+      <div class="header-text">
+        <div class="header-line-1">GGO Med — Specialist Urology &amp; Andrology</div>
+        <div class="header-line-2">369 Fulham Road, London</div>
+        <div class="header-line-3">ggomed.co.uk</div>
+        <div class="header-line-4">Confidential Private Medical Document</div>
+      </div>
+    </header>
+    <div class="accent-bar"></div>
+
+    <!-- TITLE / INTRO -->
+    <section class="section">
+      <div class="section-title" style="color: var(--clinical-blue); font-size: 26px;">
+        GGO Med Master Template
+      </div>
+      <div class="section-subtitle" style="color: var(--clinical-blue); font-weight: 500; margin-top: 4px;">
+        A4 Vertical Canva Page · Locked Brand Elements
+      </div>
+      <p style="margin-top: 8px;">
+        This master canvas contains the core visual building blocks for all GGO Med documents.
+        Use it as the starting point for patient leaflets, letters, slide exports and reports.
+        All elements are designed to be locked or duplicated inside Canva so that AI-generated
+        layouts stay within the brand system.
+      </p>
+    </section>
+
+    <!-- BRAND COLOUR SWATCHES -->
+    <section class="section">
+      <div class="section-title">Brand Colour Swatches</div>
+      <div class="section-subtitle">
+        Place this strip on the master page so Canva AI can sample and stay within the GGO Med palette.
+      </div>
+
+      <div class="swatch-row">
+        <div class="swatch teal">
+          <div class="swatch-label">#00EEB6</div>
+        </div>
+        <div class="swatch soft-blue">
+          <div class="swatch-label">#E3EEFD</div>
+        </div>
+        <div class="swatch charcoal">
+          <div class="swatch-label">#4B4B4B</div>
+        </div>
+        <div class="swatch mint">
+          <div class="swatch-label">#B5FFE7</div>
+        </div>
+        <div class="swatch black">
+          <div class="swatch-label">#111111</div>
+        </div>
+        <div class="swatch clinical">
+          <div class="swatch-label">#3208F5</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TYPOGRAPHY SYSTEM -->
+    <section class="section">
+      <div class="section-title">Typography System</div>
+      <div class="typography-grid">
+        <div class="typo-sample">
+          <h1>H1 – Main Heading</h1>
+          <div class="typo-meta">32 pt · Bold · #111111</div>
+
+          <h2 style="margin-top: 14px;">H2 – Section Heading</h2>
+          <div class="typo-meta">24 pt · Medium · #111111</div>
+
+          <h3 style="margin-top: 14px;">H3 – Subheading</h3>
+          <div class="typo-meta">18 pt · Medium · #4B4B4B</div>
+        </div>
+
+        <div>
+          <div class="body-copy-sample">
+            <strong>Body text · 12–13 pt · #4B4B4B · line height 1.4–1.55</strong><br>
+            This is a sample paragraph for patient-facing content. It should be clear,
+            calm and easy to read, with enough spacing to avoid a crowded appearance.
+          </div>
+
+          <div class="bullet-sample">
+            <div class="typo-meta" style="margin-top: 10px;">Bullet list · teal dot · #00EEB6</div>
+            <div style="margin-top: 4px;">
+              <div class="bullet-item">
+                <span class="bullet-dot"></span>Key information about the condition
+              </div>
+              <div class="bullet-item">
+                <span class="bullet-dot"></span>Simple explanation of investigations
+              </div>
+              <div class="bullet-item">
+                <span class="bullet-dot"></span>Summary of treatment options
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LAYOUT COMPONENTS -->
+    <section class="section">
+      <div class="section-title">Layout Components</div>
+      <div class="section-subtitle">
+        Use these blocks as modular elements to build leaflets and letters while keeping a consistent visual language.
+      </div>
+
+      <div class="component-grid">
+        <div class="block block-soft">
+          <div class="block-title">Soft Blue Content Block</div>
+          <p>Use for neutral information sections, summaries or background explanations.</p>
+        </div>
+
+        <div class="block block-teal">
+          <div class="block-title">Teal Accent Block</div>
+          <p>Use sparingly for key messages, safety updates or important notices.</p>
+        </div>
+
+        <div class="block block-mint">
+          <div class="block-title">Mint “Success” Block</div>
+          <p>Use for positive outcomes, reassurance messages and practical tips.</p>
+        </div>
+
+        <div class="block-outline">
+          <div class="block-title">White Content Container</div>
+          <p>White background, 1.5 px teal border, 20–24 px radius, 32 px equivalent padding on Canva.</p>
+          <div class="teal-divider"></div>
+          <p style="font-size: 11px;">Teal divider: 3–4 px, rounded ends, 70–80% width of text column.</p>
+        </div>
+      </div>
+
+      <div class="decor-row">
+        <div class="decor-shape decor-soft-wave"></div>
+        <div class="decor-shape decor-mint-blob"></div>
+      </div>
+      <div class="section-subtitle" style="margin-top: 4px;">
+        Decorative shapes: soft blue wave and mint blob in 15–25% opacity to add gentle movement without distraction.
+      </div>
+    </section>
+
+    <!-- IMAGE PLACEHOLDERS -->
+    <section class="section">
+      <div class="section-title">Image Placeholders</div>
+      <div class="section-subtitle">
+        Use these frames for diagrams, photos or infographics so that edge radii remain consistent across documents.
+      </div>
+
+      <div class="image-grid">
+        <div class="image-frame ratio-16-9">
+          16:9 image frame<br>24–28 px corner radius
+        </div>
+        <div class="image-frame ratio-1-1">
+          1:1 image frame<br>24 px corner radius
+        </div>
+        <div class="image-frame ratio-3-4">
+          3:4 portrait frame<br>24 px corner radius
+        </div>
+      </div>
+    </section>
+
+    <!-- ICON STYLE GUIDE -->
+    <section class="section">
+      <div class="section-title">Icon Style Guide</div>
+      <div class="section-subtitle">
+        Stroke-only icons · 2–2.5 px · #00EEB6 · rounded caps · no fill.
+      </div>
+
+      <div class="icon-row">
+        <div class="icon-card">
+          <svg class="icon" viewBox="0 0 24 24">
+            <circle cx="8" cy="7" r="3"></circle>
+            <path d="M11 7v8a5 5 0 0 0 10 0"></path>
+            <path d="M5 12v3a3 3 0 0 0 3 3h2"></path>
+          </svg>
+          <div class="icon-label">Stethoscope</div>
+        </div>
+
+        <div class="icon-card">
+          <svg class="icon" viewBox="0 0 24 24">
+            <rect x="5" y="10" width="14" height="9" rx="2"></rect>
+            <path d="M9 10V7a3 3 0 0 1 6 0v3"></path>
+          </svg>
+          <div class="icon-label">Lock</div>
+        </div>
+
+        <div class="icon-card">
+          <svg class="icon" viewBox="0 0 24 24">
+            <rect x="4" y="5" width="16" height="15" rx="2"></rect>
+            <path d="M9 3v4"></path>
+            <path d="M15 3v4"></path>
+            <path d="M8 11h4"></path>
+          </svg>
+          <div class="icon-label">Calendar</div>
+        </div>
+
+        <div class="icon-card">
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M5 13l4 4 10-10"></path>
+          </svg>
+          <div class="icon-label">Tick</div>
+        </div>
+
+        <div class="icon-card">
+          <svg class="icon" viewBox="0 0 24 24">
+            <rect x="6" y="5" width="12" height="14" rx="2"></rect>
+            <path d="M9 9h6"></path>
+            <path d="M9 13h4"></path>
+          </svg>
+          <div class="icon-label">Document</div>
+        </div>
+
+        <div class="icon-card">
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M5 6h14v8H9l-4 4z"></path>
+          </svg>
+          <div class="icon-label">Speech bubble</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCKED FOOTER -->
+    <footer class="locked-footer">
+      <div>
+        This document is part of the GGO Med Patient Education Series.
+      </div>
+      <div>
+        <a href="https://ggomed.co.uk">ggomed.co.uk</a> · <span class="page-number">Page 1</span>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>

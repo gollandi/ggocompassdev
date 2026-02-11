@@ -1,0 +1,266 @@
+/**
+ * GGO Compass Microcopy Text Styles
+ * Auto-generated CSS classes from Figma text style system
+ * 
+ * Usage: Apply class directly or use MicrocopyText component
+ * Example: <p className="microcopy-tracking-header-morning">Good morning</p>
+ */
+
+/* ========================================
+   1. TRACKING MODE STYLES
+   ======================================== */
+
+.microcopy-tracking-header-morning {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 140%;
+  color: var(--color-primary-navy, #1E3A5B);
+  margin-bottom: 33.6px; /* 1.4 × 24 */
+}
+
+.microcopy-tracking-header-evening {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 140%;
+  color: var(--color-primary-navy, #1E3A5B);
+  margin-bottom: 33.6px;
+}
+
+.microcopy-tracking-progress-hint {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 140%;
+  color: var(--color-accent-teal, #00BE92);
+  margin-bottom: 22.4px; /* 1.4 × 16 */
+}
+
+.microcopy-tracking-tooltip {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 140%;
+  color: var(--color-text-muted, #64748B);
+  margin-bottom: 16.8px; /* 1.4 × 12 */
+}
+
+.microcopy-tracking-encouragement {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 140%;
+  color: var(--color-highlight-gold, #E5C07B);
+  margin-bottom: 19.6px; /* 1.4 × 14 */
+}
+
+.microcopy-tracking-footer-reassure {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 140%;
+  color: var(--color-text-muted, #64748B);
+  margin-bottom: 16.8px;
+}
+
+/* ========================================
+   2. EXPLORING MODE STYLES
+   ======================================== */
+
+.microcopy-exploring-header-intro {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 140%;
+  color: var(--color-primary-navy, #1E3A5B);
+  margin-bottom: 33.6px;
+}
+
+.microcopy-exploring-subheader-procedure {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 140%;
+  color: var(--color-text-dark, #2C2C2C);
+  margin-bottom: 22.4px;
+}
+
+.microcopy-exploring-label-normal {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 140%;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-accent-teal, #00BE92);
+  margin-bottom: 16.8px;
+}
+
+.microcopy-exploring-label-forecast {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 140%;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-highlight-gold, #E5C07B);
+  margin-bottom: 16.8px;
+}
+
+.microcopy-exploring-label-redflag {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 140%;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-alert-red, #DC2626);
+  margin-bottom: 16.8px;
+}
+
+.microcopy-exploring-footer-note {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 140%;
+  color: var(--color-text-muted, #64748B);
+  margin-bottom: 14px; /* 1.4 × 10 */
+}
+
+/* ========================================
+   3. MODE SWITCH STYLES
+   ======================================== */
+
+.microcopy-switch-dialog-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 140%;
+  color: var(--color-primary-navy, #1E3A5B);
+  margin-bottom: 28px; /* 1.4 × 20 */
+}
+
+.microcopy-switch-dialog-body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 140%;
+  color: var(--color-text-dark, #2C2C2C);
+  margin-bottom: 19.6px;
+}
+
+.microcopy-switch-cta-confirm {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 140%;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  color: var(--color-accent-teal, #00BE92);
+  margin-bottom: 22.4px;
+}
+
+.microcopy-switch-cta-cancel {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 140%;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  color: var(--color-primary-navy, #1E3A5B);
+  margin-bottom: 22.4px;
+}
+
+/* ========================================
+   4. SAFETY & WEEKLY MESSAGE STYLES
+   ======================================== */
+
+.microcopy-safety-redflag-open {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 140%;
+  color: var(--color-alert-red, #DC2626);
+  margin-bottom: 19.6px;
+}
+
+.microcopy-safety-week-end {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 140%;
+  color: var(--color-highlight-gold, #E5C07B);
+  margin-bottom: 22.4px;
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+
+@media (max-width: 768px) {
+  /* Slightly reduce header sizes on mobile */
+  .microcopy-tracking-header-morning,
+  .microcopy-tracking-header-evening,
+  .microcopy-exploring-header-intro {
+    font-size: 20px;
+    margin-bottom: 28px; /* 1.4 × 20 */
+  }
+
+  .microcopy-switch-dialog-title {
+    font-size: 18px;
+    margin-bottom: 25.2px; /* 1.4 × 18 */
+  }
+}
+
+/* ========================================
+   HIGH CONTRAST MODE
+   ======================================== */
+
+@media (prefers-contrast: high) {
+  .microcopy-tracking-progress-hint,
+  .microcopy-exploring-label-normal {
+    color: var(--color-accent-teal-dark, #008B6B);
+  }
+
+  .microcopy-tracking-encouragement,
+  .microcopy-exploring-label-forecast,
+  .microcopy-safety-week-end {
+    color: var(--color-highlight-gold-dark, #C4941F);
+  }
+}
+
+/* ========================================
+   REDUCED MOTION
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  /* No animations in microcopy text */
+  .microcopy-tracking-encouragement,
+  .microcopy-safety-week-end {
+    /* Remove any potential animation hooks */
+    animation: none;
+    transition: none;
+  }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+  /* Ensure all microcopy is readable when printed */
+  .microcopy-tracking-header-morning,
+  .microcopy-tracking-header-evening,
+  .microcopy-exploring-header-intro,
+  .microcopy-switch-dialog-title {
+    page-break-after: avoid;
+  }
+
+  .microcopy-tracking-encouragement,
+  .microcopy-safety-week-end {
+    font-style: normal; /* Italic may not print well */
+  }
+}

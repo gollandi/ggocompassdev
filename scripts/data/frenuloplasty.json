@@ -1,0 +1,42 @@
+{
+    "_id": "procedure-frenuloplasty",
+    "_type": "ggoProcedure",
+    "name": "Frenuloplasty",
+    "slug": {
+        "_type": "slug",
+        "current": "frenuloplasty"
+    },
+    "category": "urology",
+    "recoveryType": "day-case",
+    "totalRecoveryDays": 10,
+    "description": "Surgical correction of a tight or short frenulum to improve comfort and function.",
+    "preOperativeInstructions": "Fast for 6 hours only if having general anaesthetic. Most procedures are under local anaesthetic.",
+    "postOperativeInstructions": "Keep the area clean. Avoid sexual activity for at least 4 weeks. Dissolving stitches will fall out naturally over 2-3 weeks.",
+    "expectedOutcomes": "Improved comfort during erection and sexual activity. Initial healing in about 10-14 days with continued healing over the following weeks.",
+    "uiCustomization": {
+        "welcomeTitle": "Your Frenuloplasty Recovery",
+        "welcomeBody": "This quick procedure typically has excellent outcomes with minimal downtime.",
+        "recoveryIntroTitle": "Your 10-day recovery plan",
+        "checklistOverrides": [
+            {
+                "key": "salt_bath",
+                "text": "If advised, rinse with warm saline"
+            },
+            {
+                "key": "avoid_erection",
+                "text": "Avoid sexual stimulation for the first week"
+            }
+        ]
+    },
+    "commonConcerns": [
+        {
+            "concern": "Will the stitches need removing?",
+            "response": "No, we use dissolvable stitches that fall out naturally within 2 weeks."
+        },
+        {
+            "concern": "When can I resume sexual activity?",
+            "response": "Wait at least 4 weeks to allow complete healing."
+        }
+    ],
+    "isActive": true
+}

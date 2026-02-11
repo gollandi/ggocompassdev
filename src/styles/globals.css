@@ -1,0 +1,396 @@
+@custom-variant dark (&:is(.dark *));
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import './microcopy.css';
+
+:root {
+  --font-size: 16px;
+  
+  /* GGO Compass Brand Colors */
+  --ggo-navy: #1E3A5B;
+  --ggo-teal: #00BE92;
+  --ggo-gold: #E5C07B;
+  --ggo-light: #F4F6F8;
+  --ggo-white: #FFFFFF;
+  --ggo-text-dark: #003024;
+  --ggo-text-muted: #004737;
+  --ggo-alert-red: #EE0000;
+  --ggo-gradient-start: #F4F6F8;
+  --ggo-gradient-end: #C7E4F6;
+
+  /* Microcopy Text Style Color Tokens */
+  --color-primary-navy: #1E3A5B;
+  --color-text-dark: #2C2C2C;
+  --color-text-muted: #64748B;
+  --color-accent-teal: #00BE92;
+  --color-accent-teal-dark: #008B6B; /* High contrast variant */
+  --color-highlight-gold: #E5C07B;
+  --color-highlight-gold-dark: #C4941F; /* High contrast variant */
+  --color-alert-red: #DC2626;
+  
+  /* Base system tokens */
+  --background: #F4F6F8;
+  --foreground: #003024;
+  --card: #FFFFFF;
+  --card-foreground: #003024;
+  --popover: #FFFFFF;
+  --popover-foreground: #003024;
+  --primary: #00BE92;
+  --primary-foreground: #FFFFFF;
+  --secondary: #1E3A5B;
+  --secondary-foreground: #FFFFFF;
+  --muted: #F4F6F8;
+  --muted-foreground: #004737;
+  --accent: #E5C07B;
+  --accent-foreground: #003024;
+  --destructive: #EE0000;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(30, 58, 91, 0.1);
+  --input: transparent;
+  --input-background: #FFFFFF;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #00BE92;
+  --chart-1: #00BE92;
+  --chart-2: #1E3A5B;
+  --chart-3: #E5C07B;
+  --chart-4: #F4F6F8;
+  --chart-5: #004737;
+  --radius: 0.75rem;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #003024;
+  --sidebar-primary: #00BE92;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F4F6F8;
+  --sidebar-accent-foreground: #003024;
+  --sidebar-border: rgba(30, 58, 91, 0.1);
+  --sidebar-ring: #00BE92;
+  
+  /* Spacing tokens */
+  --space-unit: 8px;
+  --gutter-desktop: 32px;
+  --gutter-mobile: 16px;
+  --margin-desktop: 120px;
+  --margin-mobile: 24px;
+  
+  /* Animation - Board refinement */
+  --transition-speed: 250ms;
+  --transition-speed-slow: 400ms;
+  --transition-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-breathe: cubic-bezier(0.4, 0, 0.2, 1); /* breathing motion */
+  --transition-phase: 0.4s; /* phase transitions */
+  
+  /* Border Radius - Standardized */
+  --radius-card: 24px;
+  --radius-button: 12px;
+  --radius-input: 12px;
+  
+  /* Focus Ring */
+  --focus-ring-width: 2px;
+  --focus-ring-color: var(--ggo-teal);
+  --focus-ring-offset: 2px;
+  
+  /* Shadows */
+  --shadow-1: 0 2px 8px rgba(30, 58, 91, 0.08), 0 1px 3px rgba(30, 58, 91, 0.06);
+}
+
+.dark {
+  --background: #003024;
+  --foreground: #F4F6F8;
+  --card: #1E3A5B;
+  --card-foreground: #F4F6F8;
+  --popover: #1E3A5B;
+  --popover-foreground: #F4F6F8;
+  --primary: #00BE92;
+  --primary-foreground: #FFFFFF;
+  --secondary: #004737;
+  --secondary-foreground: #F4F6F8;
+  --muted: #004737;
+  --muted-foreground: #C7E4F6;
+  --accent: #E5C07B;
+  --accent-foreground: #003024;
+  --destructive: #EE0000;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(196, 228, 246, 0.2);
+  --input: rgba(196, 228, 246, 0.1);
+  --ring: #00BE92;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: #00BE92;
+  --chart-2: #E5C07B;
+  --chart-3: #C7E4F6;
+  --chart-4: #004737;
+  --chart-5: #1E3A5B;
+  --sidebar: #1E3A5B;
+  --sidebar-foreground: #F4F6F8;
+  --sidebar-primary: #00BE92;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #004737;
+  --sidebar-accent-foreground: #F4F6F8;
+  --sidebar-border: rgba(196, 228, 246, 0.2);
+  --sidebar-ring: #00BE92;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* GGO Custom colors */
+  --color-ggo-navy: var(--ggo-navy);
+  --color-ggo-teal: var(--ggo-teal);
+  --color-ggo-gold: var(--ggo-gold);
+  --color-ggo-light: var(--ggo-light);
+  --color-ggo-white: var(--ggo-white);
+  --color-ggo-text-dark: var(--ggo-text-dark);
+  --color-ggo-text-muted: var(--ggo-text-muted);
+  --color-ggo-alert-red: var(--ggo-alert-red);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  
+  /* Focus ring styling - 2px teal on all interactive elements */
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  [role="button"]:focus-visible,
+  [tabindex]:not([tabindex="-1"]):focus-visible {
+    outline: var(--focus-ring-width) solid var(--focus-ring-color);
+    outline-offset: var(--focus-ring-offset);
+  }
+}
+
+/**
+ * Standardized Typography System
+ * H1 48px/600, H2 32px/600, H3 24px/500, Body 16px/400, Caption 12px/400
+ * Line heights: 120% headings, 140% body
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: 48px;
+      font-weight: 600;
+      line-height: 1.2; /* 120% for headings */
+    }
+
+    h2 {
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 1.2; /* 120% for headings */
+    }
+
+    h3 {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 1.2; /* 120% for headings */
+    }
+
+    h4 {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.4; /* 140% for body-like headings */
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.4; /* 140% for body */
+    }
+
+    label {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    button {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    input {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.4;
+    }
+    
+    small, .caption {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 1.4;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* Custom animations */
+@keyframes compassRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes needleFlick {
+  0%, 100% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: rotate(55deg);
+  }
+}
+
+@keyframes gentlePulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes goldPulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Accessibility - Reduced motion: opacity fades only, no translate/rotate */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transform: none !important;
+  }
+  
+  /* Allow opacity transitions only */
+  * {
+    transition-property: opacity !important;
+  }
+}
+
+/* User Preference: Reduced Motion (rm class) */
+html.rm *,
+html.rm *::before,
+html.rm *::after {
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+}
+
+html.rm * {
+  transition-property: opacity !important;
+  transition-duration: 250ms !important;
+}
+
+/* User Preference: Larger Text (lg class) */
+html.lg {
+  font-size: 112.5%; /* 18px base instead of 16px */
+}
+
+/* User Preference: High Contrast (hc class) */
+html.hc {
+  --color-text: #0A0A0A;
+  --color-bg: #FFFFFF;
+  --color-accent-teal: #007A66;     /* darker for 7:1 contrast */
+  --color-accent-teal-dark: #005544;
+  --color-alert-red: #A40000;       /* darker for 7:1 contrast */
+  --ggo-teal: #007A66;
+  --ggo-text-dark: #0A0A0A;
+  --ggo-text-muted: #2C2C2C;
+  --ggo-alert-red: #A40000;
+  --shadow-1: none; /* flatten soft shadows for clarity */
+}
+
+html.hc .shadow-lg,
+html.hc .shadow-md,
+html.hc .shadow-sm {
+  box-shadow: 0 0 0 1px rgba(10, 10, 10, 0.2) !important;
+}
+
+/* High contrast dark mode uses white outline instead of teal glow */
+html.hc.dark button:hover,
+html.hc.dark [role="button"]:hover {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --border: rgba(30, 58, 91, 0.3);
+  }
+}

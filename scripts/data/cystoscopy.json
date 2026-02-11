@@ -1,0 +1,42 @@
+{
+    "_id": "procedure-cystoscopy",
+    "_type": "ggoProcedure",
+    "name": "Flexible Cystoscopy",
+    "slug": {
+        "_type": "slug",
+        "current": "flexible-cystoscopy"
+    },
+    "category": "urology",
+    "recoveryType": "day-case",
+    "totalRecoveryDays": 3,
+    "description": "Diagnostic examination of the bladder using a thin, flexible camera.",
+    "preOperativeInstructions": "No fasting required. Drink plenty of water before the procedure. You may drive yourself home.",
+    "postOperativeInstructions": "Drink plenty of fluids. Mild burning when urinating is normal for 24-48 hours. Avoid strenuous activity and heavy lifting for 24-48 hours, and avoid caffeine/alcohol for 48 hours.",
+    "expectedOutcomes": "Immediate diagnostic results. Minimal discomfort. Return to normal activities within 24-48 hours.",
+    "uiCustomization": {
+        "welcomeTitle": "Your Cystoscopy Recovery",
+        "welcomeBody": "This is a quick diagnostic procedure with minimal recovery time.",
+        "recoveryIntroTitle": "Your 3-day recovery plan",
+        "checklistOverrides": [
+            {
+                "key": "hydration",
+                "text": "Drink at least 2 litres of water"
+            },
+            {
+                "key": "urine_check",
+                "text": "Monitor urine for blood (light pink is normal)"
+            }
+        ]
+    },
+    "commonConcerns": [
+        {
+            "concern": "Will it hurt?",
+            "response": "Local anaesthetic gel is used. Most patients report mild discomfort rather than pain."
+        },
+        {
+            "concern": "Is blood in urine normal?",
+            "response": "Light pink urine for 24 hours is normal. Dark red blood or clots require medical attention."
+        }
+    ],
+    "isActive": true
+}
