@@ -54,6 +54,10 @@ npm run start
 - Push to `main` branch for automatic deployment via GitHub Actions
 - See [GitHub Actions Setup](.github/workflows/README.md) for configuration
 
+**Mirror to Wireframe Repository:**
+- Automatically push code to `ggocompasswireframedesign` repository
+- See [Mirror Setup Guide](./MIRROR_TO_WIREFRAME_SETUP.md) for configuration
+
 > **🚨 Deployment Failing?**  
 > If you see "Error: No existing credentials found" → [Quick Fix](./VERCEL_SECRETS_SETUP.md)
 
@@ -69,6 +73,7 @@ npm run start
 
 ## Documentation
 
+- **[MIRROR_TO_WIREFRAME_SETUP.md](./MIRROR_TO_WIREFRAME_SETUP.md)** - **🔄 Push code to ggocompasswireframedesign repository**
 - **[VERCEL_SECRETS_SETUP.md](./VERCEL_SECRETS_SETUP.md)** - **🚨 Fix "No credentials found" error**
 - **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Complete deployment guide with CI/CD setup
 - **[.github/workflows/README.md](.github/workflows/README.md)** - GitHub Actions workflows documentation

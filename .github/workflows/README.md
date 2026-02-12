@@ -37,6 +37,24 @@ This directory contains GitHub Actions workflows for CI/CD automation.
 - Builds the project
 - Deploys to Vercel production
 
+### 3. Mirror to Wireframe Workflow (`mirror-to-wireframe.yml`)
+
+**Trigger**: Runs on push to `main` branch or manual trigger via workflow_dispatch.
+
+**Purpose**: Automatically pushes code to the `ggocompasswireframedesign` repository.
+
+> **📖 Setup Required**  
+> See [MIRROR_TO_WIREFRAME_SETUP.md](../../MIRROR_TO_WIREFRAME_SETUP.md) for complete setup instructions!
+
+**Steps**:
+- Checks out the code with full git history
+- Validates GitHub Personal Access Token
+- Configures git
+- Adds wireframe repository as remote
+- Pushes to wireframe repository
+
+**Requirements**: Requires `WIREFRAME_REPO_TOKEN` secret configured in GitHub repository settings.
+
 ## Required GitHub Secrets
 
 > **🚨 IMPORTANT:** The deployment workflow will fail without these secrets!  
@@ -58,6 +76,7 @@ To use the Vercel deployment workflow, you need to configure the following secre
 | `VERCEL_TOKEN` | Vercel authentication token | 1. Go to https://vercel.com/account/tokens<br>2. Click "Create Token"<br>3. Name it "GitHub Actions"<br>4. Copy the token |
 | `VERCEL_ORG_ID` | Your Vercel organization ID | 1. Go to your Vercel project settings<br>2. Find in Project Settings → General<br>3. Copy the "Organization ID" |
 | `VERCEL_PROJECT_ID` | Your Vercel project ID | 1. Go to your Vercel project settings<br>2. Find in Project Settings → General<br>3. Copy the "Project ID" |
+| `WIREFRAME_REPO_TOKEN` | GitHub Personal Access Token for mirroring | 1. Go to https://github.com/settings/tokens/new<br>2. Select scope: `repo` (Full control)<br>3. Click "Generate token"<br>4. Copy the token<br>**See [MIRROR_TO_WIREFRAME_SETUP.md](../../MIRROR_TO_WIREFRAME_SETUP.md) for details** |
 
 ### Environment Variables in Vercel
 

@@ -1,0 +1,63 @@
+name: Mirror to ggocompasswireframedesign
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history for proper mirroring
+
+      - name: Validate GitHub Token
+        shell: bash
+        run: |
+          if [ -z "${{ secrets.WIREFRAME_REPO_TOKEN }}" ]; then
+            echo "❌ ERROR: WIREFRAME_REPO_TOKEN secret is not configured!"
+            echo ""
+            echo "To fix this:"
+            echo "1. Create a GitHub Personal Access Token (PAT) at:"
+            echo "   https://github.com/settings/tokens/new"
+            echo "2. Select scopes: 'repo' (Full control of private repositories)"
+            echo "3. Copy the token"
+            echo "4. Go to: GitHub repo → Settings → Secrets and variables → Actions"
+            echo "5. Add new secret: WIREFRAME_REPO_TOKEN with the PAT value"
+            exit 1
+          fi
+          echo "✅ WIREFRAME_REPO_TOKEN is configured"
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
+
+      - name: Add wireframe repository as remote
+        env:
+          WIREFRAME_TOKEN: ${{ secrets.WIREFRAME_REPO_TOKEN }}
+        run: |
+          # Remove existing remote if it exists
+          git remote remove wireframe 2>/dev/null || true
+          
+          # Add the wireframe repository as a remote using the PAT
+          git remote add wireframe https://x-access-token:${WIREFRAME_TOKEN}@github.com/gollandi/ggocompasswireframedesign.git
+
+      - name: Push to wireframe repository
+        run: |
+          echo "🚀 Pushing to ggocompasswireframedesign repository..."
+          git push wireframe main:main --force
+          echo "✅ Successfully pushed to ggocompasswireframedesign!"
+
+      - name: Summary
+        run: |
+          echo "📋 Mirror Summary:"
+          echo "  Source: gollandi/ggocompassdev (main branch)"
+          echo "  Target: gollandi/ggocompasswireframedesign (main branch)"
+          echo "  Status: ✅ Complete"
