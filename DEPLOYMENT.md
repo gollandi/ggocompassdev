@@ -64,6 +64,8 @@ Push to the `main` branch to automatically deploy via GitHub Actions.
 
 ### Environment Variables
 
+**IMPORTANT:** Environment variables must be configured directly in the Vercel Dashboard, not in the `vercel.json` file.
+
 Add these in Vercel Dashboard → Settings → Environment Variables:
 
 ```env
