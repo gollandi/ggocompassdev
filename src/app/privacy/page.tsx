@@ -34,8 +34,8 @@ export default function PrivacyPage() {
             </p>
             <p className="mt-2">
               For data queries, contact us at:{' '}
-              <a href="mailto:info@ggomed.co.uk" className="text-ggo-teal underline underline-offset-2">
-                info@ggomed.co.uk
+              <a href="mailto:admin@ggomed.co.uk" className="text-ggo-teal underline underline-offset-2">
+                admin@ggomed.co.uk
               </a>
             </p>
           </section>
