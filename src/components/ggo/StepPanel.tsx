@@ -6,6 +6,13 @@ import { portableTextToParagraphs, type PortableTextBlock } from "@/lib/sanity/t
 import { useMemo } from "react";
 import type { EmergencyContactDetails } from "@/lib/sanity/queries";
 
+const GENERIC_RED_FLAGS = [
+  'Severe pain not controlled by prescribed medication',
+  'Heavy bleeding, clots, or rapidly spreading swelling',
+  'Fever above 38°C, chills, or infection signs',
+  'Difficulty passing urine, breathing issues, or chest pain',
+];
+
 interface StepPanelStep {
   _id: string;
   title: string;
@@ -19,6 +26,7 @@ interface StepPanelStep {
     thumbnail?: string;
   };
   clinicalGuidance?: PortableTextBlock[];
+  redFlags?: string[];
   link?: string;
 }
 
@@ -29,6 +37,9 @@ interface StepPanelProps {
 }
 
 export function StepPanel({ step, onClose, emergencyContacts }: StepPanelProps) {
+  const activeRedFlags =
+    step.redFlags && step.redFlags.length > 0 ? step.redFlags : GENERIC_RED_FLAGS;
+  const redFlagsAreGeneric = !step.redFlags || step.redFlags.length === 0;
   const guidanceParagraphs = useMemo(
     () => portableTextToParagraphs(step.clinicalGuidance),
     [step.clinicalGuidance]
@@ -173,26 +184,18 @@ export function StepPanel({ step, onClose, emergencyContacts }: StepPanelProps) 
                     <div>
                       <h4 className="text-ggo-alert-red mb-3">Call immediately if you notice:</h4>
                       <ul className="space-y-2 text-ggo-text-dark">
-                        <li className="flex items-start gap-2">
-                          <span className="text-ggo-alert-red mt-1">•</span>
-                          <span>Severe pain not controlled by prescribed medication</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-ggo-alert-red mt-1">•</span>
-                          <span>Heavy bleeding, clots, or rapidly spreading swelling</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-ggo-alert-red mt-1">•</span>
-                          <span>Fever above 38°C, chills, or infection signs</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-ggo-alert-red mt-1">•</span>
-                          <span>Difficulty passing urine, breathing issues, or chest pain</span>
-                        </li>
+                        {activeRedFlags.map((flag, i) => (
+                          <li key={i} className="flex items-start gap-2">
+                            <span className="text-ggo-alert-red mt-1">•</span>
+                            <span>{flag}</span>
+                          </li>
+                        ))}
                       </ul>
-                      <p className="text-xs text-ggo-text-muted mt-4 italic font-medium">
-                        Source — BAUS Clinical Guidelines 2025
-                      </p>
+                      {redFlagsAreGeneric && (
+                        <p className="text-xs text-ggo-text-muted mt-4 italic font-medium">
+                          Source — BAUS Clinical Guidelines 2025
+                        </p>
+                      )}
                     </div>
                   </div>
                 </div>

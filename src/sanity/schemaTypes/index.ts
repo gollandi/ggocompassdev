@@ -9,7 +9,8 @@ import faqEntry from '../../../sanity/schemas/faqEntry'
 import accordionBlock from '../../../sanity/schemas/objects/accordionBlock'
 import cardBlock from '../../../sanity/schemas/objects/cardBlock'
 import videoResourceBlock from '../../../sanity/schemas/objects/videoResourceBlock'
-import { medicalConditionEntity, medicalProcedureEntity } from '../../../sanity/schemas/medicalEntityData'
+import { medicalCode } from '../../../sanity/schemas/objects/medicalCode'
+import { medicalInterventionEntity } from '../../../sanity/schemas/medicalEntityData'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -22,7 +23,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     accordionBlock,
     cardBlock,
     videoResourceBlock,
-    medicalConditionEntity,
-    medicalProcedureEntity
+    medicalCode,
+    medicalInterventionEntity,
   ],
 }
