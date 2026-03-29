@@ -32,23 +32,23 @@ export function CompassMicroProgress({
           cx="16"
           cy="16"
           r="14"
-          stroke="#F4F6F8"
+          stroke="#E2E8F0"
           strokeWidth="2"
           fill="white"
         />
-        
+
         {/* Progress arc */}
         <motion.circle
           cx="16"
           cy="16"
           r="14"
-          stroke="#00BE92"
+          stroke="#0D9488"
           strokeWidth="2"
           fill="none"
           strokeLinecap="round"
           strokeDasharray={`${2 * Math.PI * 14}`}
           initial={{ strokeDashoffset: 2 * Math.PI * 14 }}
-          animate={{ 
+          animate={{
             strokeDashoffset: 2 * Math.PI * 14 * (1 - progressPercentage / 100)
           }}
           transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
@@ -60,7 +60,7 @@ export function CompassMicroProgress({
           x="16"
           y="20"
           textAnchor="middle"
-          fill="#1E3A5B"
+          fill="#1E3A5F"
           fontSize="14"
           fontWeight="600"
           fontFamily="Plus Jakarta Sans"
@@ -75,7 +75,7 @@ export function CompassMicroProgress({
         style={{
           width: 2,
           height: 8,
-          backgroundColor: "#E5C07B",
+          backgroundColor: "#F59E0B",
           transformOrigin: "bottom center",
           marginLeft: -1,
           marginTop: -8,

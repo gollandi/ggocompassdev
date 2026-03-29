@@ -5,82 +5,101 @@
 @tailwind utilities;
 
 :root {
-  /* Brand: Background #F7F9FF */
-  --background: 225 100% 98%;
-  /* Brand: Charcoal #4B4B4B */
-  --foreground: 0 0% 29%;
-  
+  /* GGO brand tokens */
+  --color-teal: #0D9488;
+  --color-teal-light: #14B8A6;
+  --color-teal-dark: #0F766E;
+  --color-navy: #1E3A5F;
+  --color-navy-light: #2D5F8A;
+  --color-slate: #64748B;
+  --color-amber: #F59E0B;
+  --color-amber-light: #FEF3C7;
+  --color-red: #EF4444;
+  --color-red-light: #FEE2E2;
+  --color-green: #10B981;
+  --color-green-light: #D1FAE5;
+  --color-bg: #FAFBFC;
+  --color-surface: #FFFFFF;
+  --color-border: #E2E8F0;
+
+  /* Shadcn CSS vars — mapped to GGO brand */
+  /* Background: #FAFBFC */
+  --background: 210 20% 98%;
+  /* Navy: #1E3A5F */
+  --foreground: 214 52% 24%;
+
   --card: 0 0% 100%;
-  --card-foreground: 0 0% 29%;
-  
+  --card-foreground: 214 52% 24%;
+
   --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 29%;
-  
-  /* Brand: Teal #00EEB6 */
-  --primary: 166 100% 47%;
-  --primary-foreground: 0 0% 7%; /* Black text on Teal */
-  
-  /* Brand: Soft Blue #E3EEFD */
-  --secondary: 217 73% 94%;
-  --secondary-foreground: 0 0% 29%;
-  
-  --muted: 217 73% 94%;
-  --muted-foreground: 215.4 16.3% 46.9%;
-  
-  --accent: 217 73% 94%;
-  --accent-foreground: 0 0% 7%;
-  
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
-  
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --ring: 166 100% 47%; /* Teal ring */
-  
-  --radius: 1rem; /* 16px default */
-  
-  --chart-1: 166 100% 47%;
+  --popover-foreground: 214 52% 24%;
+
+  /* Teal: #0D9488 */
+  --primary: 174 82% 31%;
+  --primary-foreground: 0 0% 100%;
+
+  /* Light bg for secondary elements */
+  --secondary: 210 20% 96%;
+  --secondary-foreground: 214 52% 24%;
+
+  --muted: 210 20% 96%;
+  --muted-foreground: 215 16% 47%;
+
+  --accent: 210 20% 96%;
+  --accent-foreground: 214 52% 24%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  /* Border: #E2E8F0 */
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 174 82% 31%;
+
+  --radius: 0.5rem; /* 8px — buttons/inputs base */
+
+  --chart-1: 174 82% 31%;
   --chart-2: 173 58% 39%;
-  --chart-3: 197 37% 24%;
-  --chart-4: 43 74% 66%;
-  --chart-5: 27 87% 67%;
+  --chart-3: 214 52% 24%;
+  --chart-4: 38 92% 50%;
+  --chart-5: 0 84% 60%;
 }
 
 .dark {
-  /* Dark mode isn't explicitly defined in guide, retaining accessible dark defaults with brand hints */
-  --background: 222.2 84% 4.9%;
-  --foreground: 210 40% 98%;
-  
-  --card: 222.2 84% 4.9%;
-  --card-foreground: 210 40% 98%;
-  
-  --popover: 222.2 84% 4.9%;
-  --popover-foreground: 210 40% 98%;
-  
-  --primary: 166 100% 47%;
-  --primary-foreground: 0 0% 7%;
-  
-  --secondary: 217.2 32.6% 17.5%;
-  --secondary-foreground: 210 40% 98%;
-  
-  --muted: 217.2 32.6% 17.5%;
-  --muted-foreground: 215 20.2% 65.1%;
-  
-  --accent: 217.2 32.6% 17.5%;
-  --accent-foreground: 210 40% 98%;
-  
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 210 40% 98%;
-  
-  --border: 217.2 32.6% 17.5%;
-  --input: 217.2 32.6% 17.5%;
-  --ring: 166 100% 47%;
-  
-  --chart-1: 220 70% 50%;
-  --chart-2: 160 60% 45%;
-  --chart-3: 30 80% 55%;
-  --chart-4: 280 65% 60%;
-  --chart-5: 340 75% 55%;
+  --background: 214 52% 10%;
+  --foreground: 210 20% 96%;
+
+  --card: 214 52% 13%;
+  --card-foreground: 210 20% 96%;
+
+  --popover: 214 52% 13%;
+  --popover-foreground: 210 20% 96%;
+
+  /* Teal slightly lighter in dark mode */
+  --primary: 174 72% 40%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 214 40% 20%;
+  --secondary-foreground: 210 20% 90%;
+
+  --muted: 214 40% 20%;
+  --muted-foreground: 215 20% 65%;
+
+  --accent: 214 40% 20%;
+  --accent-foreground: 210 20% 96%;
+
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 214 40% 20%;
+  --input: 214 40% 20%;
+  --ring: 174 72% 40%;
+
+  --chart-1: 174 72% 40%;
+  --chart-2: 173 58% 39%;
+  --chart-3: 214 52% 60%;
+  --chart-4: 38 92% 50%;
+  --chart-5: 0 84% 60%;
 }
 
 * {
@@ -92,20 +111,22 @@ body {
   font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
-/* Accessibility Classes */
-.high-contrast {
+/* Accessibility Classes — class names must match PreferenceHydrator output */
+.hc {
   --background: 0 0% 100%;
   --foreground: 0 0% 0%;
   --border: 0 0% 0%;
+  --primary: 174 100% 20%;
+  --primary-foreground: 0 0% 100%;
 }
 
-.high-contrast.dark {
+.hc.dark {
   --background: 0 0% 0%;
   --foreground: 0 0% 100%;
   --border: 0 0% 100%;
 }
 
-.larger-text {
+.lg {
   font-size: 1.125em;
 }
 
@@ -119,9 +140,9 @@ body {
   }
 }
 
-.reduced-motion *,
-.reduced-motion *::before,
-.reduced-motion *::after {
+.rm *,
+.rm *::before,
+.rm *::after {
   animation-duration: 0.01ms !important;
   animation-iteration-count: 1 !important;
   transition-duration: 0.01ms !important;

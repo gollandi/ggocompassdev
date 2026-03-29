@@ -10,14 +10,32 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'ggo-teal': '#00EEB6',
+        // GGO brand tokens (Notion spec)
+        'ggo-teal': '#0D9488',
+        'ggo-teal-light': '#14B8A6',
+        'ggo-teal-dark': '#0F766E',
+        'ggo-navy': '#1E3A5F',
+        'ggo-navy-light': '#2D5F8A',
+        'ggo-slate': '#64748B',
+        'ggo-amber': '#F59E0B',
+        'ggo-amber-light': '#FEF3C7',
+        'ggo-red': '#EF4444',
+        'ggo-red-light': '#FEE2E2',
+        'ggo-green': '#10B981',
+        'ggo-green-light': '#D1FAE5',
+        'ggo-bg': '#FAFBFC',
+        'ggo-surface': '#FFFFFF',
+        'ggo-border': '#E2E8F0',
+        // Legacy aliases (kept for backward compatibility during migration)
         'ggo-soft-blue': '#E3EEFD',
-        'ggo-charcoal': '#4B4B4B',
-        'ggo-mint': '#B5FFE7',
-        'ggo-black': '#111111',
-        'ggo-blue': '#3208F5',
-        'ggo-navy': '#111111', // Mapped to black for backward compat
-        'ggo-gold': '#E5C07B', // Kept for legacy support
+        'ggo-charcoal': '#64748B',
+        'ggo-mint': '#D1FAE5',
+        'ggo-black': '#1E3A5F',
+        'ggo-gold': '#F59E0B',
+        'ggo-light': '#FAFBFC',
+        'ggo-text-muted': '#64748B',
+        'ggo-text-dark': '#1E3A5F',
+        'ggo-alert-red': '#EF4444',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -63,9 +81,9 @@ const config: Config = {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
-        xl: '18px',
-        '2xl': '24px',
-        '3xl': '32px',
+        xl: '12px',   // cards
+        '2xl': '16px',
+        '3xl': '24px',
       },
       keyframes: {
         'accordion-down': {

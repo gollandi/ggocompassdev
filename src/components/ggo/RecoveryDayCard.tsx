@@ -54,9 +54,9 @@ export function RecoveryDayCard({
   const getThemeStyles = () => {
     if (theme === "dark") {
       return {
-        background: isToday 
-          ? "linear-gradient(135deg, #00BE92 0%, #1E3A5B 100%)"
-          : "linear-gradient(135deg, #003024 0%, #1E3A5B 100%)",
+        background: isToday
+          ? "linear-gradient(135deg, #0D9488 0%, #1E3A5F 100%)"
+          : "linear-gradient(135deg, #042f2e 0%, #1E3A5F 100%)",
         textPrimary: "text-white",
         textSecondary: "text-white/80",
         iconBg: "bg-white/10",
@@ -69,13 +69,13 @@ export function RecoveryDayCard({
         iconBg: "bg-black/10",
       };
     }
-    // Default light theme - improved contrast with darker background
+    // Default light theme
     return {
-      background: isToday 
-        ? "linear-gradient(135deg, #1E3A5B 0%, #00856D 100%)"  // Navy to dark teal for WCAG AA contrast
+      background: isToday
+        ? "linear-gradient(135deg, #1E3A5F 0%, #0F766E 100%)"
         : "linear-gradient(135deg, #E5F5F2 0%, #FFFFFF 100%)",
       textPrimary: isToday ? "text-white" : "text-ggo-navy",
-      textSecondary: isToday ? "text-white/95" : "text-ggo-text-muted",  // Increased opacity for better contrast
+      textSecondary: isToday ? "text-white/95" : "text-ggo-slate",
       iconBg: isToday ? "bg-white/20" : "bg-ggo-teal/10",
     };
   };
@@ -94,10 +94,10 @@ export function RecoveryDayCard({
   const getBackgroundIntensity = () => {
     const progress = day.day / totalDays;
     if (progress > 0.8) {
-      // Near completion - add gold accent with better contrast
-      return isToday 
-        ? "linear-gradient(135deg, #A67C3B 0%, #C9A65C 100%)"  // Dark gold for white text contrast
-        : "linear-gradient(135deg, #FFF9E6 0%, #FFFFFF 100%)";
+      // Near completion — amber gradient
+      return isToday
+        ? "linear-gradient(135deg, #B45309 0%, #D97706 100%)"
+        : "linear-gradient(135deg, #FEF3C7 0%, #FFFFFF 100%)";
     }
     return themeStyles.background;
   };
@@ -105,17 +105,12 @@ export function RecoveryDayCard({
   return (
     <motion.div
       className={`
-        flex-shrink-0 w-[320px] overflow-hidden shadow-lg
-        ${isToday ? 'ring-4 ring-ggo-gold/40' : 'border border-ggo-navy/10'}
+        flex-shrink-0 w-[320px] overflow-hidden shadow-lg rounded-xl min-h-[400px]
+        ${isToday ? 'ring-4 ring-ggo-amber/40' : 'border border-ggo-navy/10'}
         ${className}
       `}
       style={{
-        background: typeof getBackgroundIntensity() === 'string' 
-          ? getBackgroundIntensity() 
-          : themeStyles.background,
-        borderRadius: "24px",
-        minHeight: "400px",
-        boxShadow: "0 2px 8px rgba(30, 58, 91, 0.08), 0 1px 3px rgba(30, 58, 91, 0.06)"
+        background: getBackgroundIntensity(),
       }}
       initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}

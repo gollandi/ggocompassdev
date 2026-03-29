@@ -83,10 +83,12 @@ export function ModeSwitcher({ currentMode, onModeChange, disabled }: ModeSwitch
         <motion.button
           onClick={handleModeClick}
           disabled={disabled}
+          aria-label={`Switch navigation mode. Current mode: ${currentMode}`}
+          aria-expanded={isOpen}
           className={`
             flex items-center gap-2 px-4 py-2 rounded-xl border transition-all
-            ${currentMode === "tracking" 
-              ? "bg-ggo-gold/10 border-ggo-gold/30 text-ggo-navy" 
+            ${currentMode === "tracking"
+              ? "bg-ggo-amber-light border-ggo-amber/30 text-ggo-navy"
               : "bg-ggo-teal/10 border-ggo-teal/30 text-ggo-navy"
             }
             ${disabled ? "opacity-50 cursor-not-allowed" : "hover:shadow-md cursor-pointer"}
@@ -123,11 +125,12 @@ export function ModeSwitcher({ currentMode, onModeChange, disabled }: ModeSwitch
               {/* Tracking Option */}
               <button
                 onClick={() => handleModeSelect("tracking")}
+                aria-pressed={currentMode === "tracking"}
                 className={`
                   w-full p-4 text-left transition-all
-                  ${currentMode === "tracking" 
-                    ? "bg-ggo-gold/10" 
-                    : "hover:bg-ggo-light"
+                  ${currentMode === "tracking"
+                    ? "bg-ggo-amber-light"
+                    : "hover:bg-ggo-bg"
                   }
                 `}
               >
@@ -158,11 +161,12 @@ export function ModeSwitcher({ currentMode, onModeChange, disabled }: ModeSwitch
               {/* Exploring Option */}
               <button
                 onClick={() => handleModeSelect("exploring")}
+                aria-pressed={currentMode === "exploring"}
                 className={`
                   w-full p-4 text-left transition-all border-t border-ggo-navy/10
-                  ${currentMode === "exploring" 
-                    ? "bg-ggo-teal/10" 
-                    : "hover:bg-ggo-light"
+                  ${currentMode === "exploring"
+                    ? "bg-ggo-teal/10"
+                    : "hover:bg-ggo-bg"
                   }
                 `}
               >
