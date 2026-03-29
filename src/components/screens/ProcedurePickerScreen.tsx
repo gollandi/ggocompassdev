@@ -34,14 +34,12 @@ export function ProcedurePickerScreen({ onNext }: ProcedurePickerScreenProps) {
         setProcedures(mergeProceduresWithFallback(proceduresData));
 
         if (!locationsData || locationsData.length === 0) {
-          console.log('Sanity returned no locations, using hardcoded fallback');
           setLocations(getHardcodedLocations());
         } else {
           setLocations(locationsData);
         }
       } catch (error) {
         console.error('Error fetching data from Sanity:', error);
-        console.log('Using hardcoded content library as fallback');
         setProcedures(getHardcodedProcedures());
         setLocations(getHardcodedLocations());
       } finally {
@@ -158,7 +156,6 @@ export function ProcedurePickerScreen({ onNext }: ProcedurePickerScreenProps) {
   function mergeProceduresWithFallback(sanityProcedures?: Procedure[] | null): Procedure[] {
     const hardcoded = getHardcodedProcedures();
     if (!sanityProcedures || sanityProcedures.length === 0) {
-      console.log('Sanity returned no procedures, using hardcoded content library');
       return hardcoded;
     }
 
