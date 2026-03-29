@@ -107,10 +107,15 @@ export async function getUIString(
     // Navigate the content object to find the key
     // This is a simplified implementation - you might need more sophisticated key resolution
     const parts = key.split('.');
-    let value: any = content;
+    let value: unknown = content;
 
     for (const part of parts) {
-        value = value?.[part];
+        if (value !== null && typeof value === 'object') {
+            value = (value as Record<string, unknown>)[part];
+        } else {
+            value = undefined;
+            break;
+        }
     }
 
     if (typeof value === 'string') {
