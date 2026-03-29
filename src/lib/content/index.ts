@@ -66,7 +66,6 @@ export async function getProcedureContentWithFallback(
     try {
         const sanityContent = await getSanityProcedureContent(procedureSlug);
         if (sanityContent) {
-            console.log(`[Content] Using Sanity CMS content for ${procedureSlug}`);
             // TODO: Convert Sanity format to ProcedureContent format
             // For now, continue to fallback
         }
@@ -81,7 +80,6 @@ export async function getProcedureContentWithFallback(
         const content = procedureLibrary[variationKey];
 
         if (content) {
-            console.log(`[Content] Using hardcoded library for ${procedureSlug} (${variationKey})`);
             return content;
         }
     }
