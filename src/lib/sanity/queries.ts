@@ -138,6 +138,7 @@ export interface TimelineStep {
     duration?: string;
   };
   clinicalGuidance?: any[];
+  redFlags?: string[];
   order: number;
   isCompleted?: boolean;
 }
@@ -421,6 +422,7 @@ export async function getTimelineSteps(procedureId: string): Promise<TimelineSte
       duration
     },
     clinicalGuidance,
+    redFlags,
     order,
     isCompleted
   }`;

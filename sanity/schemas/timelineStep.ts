@@ -89,6 +89,14 @@ export default defineType({
       description: 'Detailed instructions for this step',
     }),
     defineField({
+      name: 'redFlags',
+      title: 'Red Flag Symptoms',
+      type: 'array',
+      of: [{ type: 'string' }],
+      description:
+        'Procedure-specific symptoms that require immediate contact. Overrides the generic fallback list. Use specific, measurable language (e.g. "Fever above 38°C"). Leave empty to use the generic BAUS post-op fallback.',
+    }),
+    defineField({
       name: 'order',
       title: 'Display Order',
       type: 'number',
