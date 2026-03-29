@@ -7,7 +7,8 @@ import faqEntry from './faqEntry';
 import accordionBlock from './objects/accordionBlock';
 import cardBlock from './objects/cardBlock';
 import videoResourceBlock from './objects/videoResourceBlock';
-import { medicalConditionEntity, medicalProcedureEntity } from './medicalEntityData';
+import { medicalCode } from './objects/medicalCode';
+import { medicalInterventionEntity } from './medicalEntityData';
 
 export const schemaTypes = [
     procedure,
@@ -19,6 +20,6 @@ export const schemaTypes = [
     accordionBlock,
     cardBlock,
     videoResourceBlock,
-    medicalConditionEntity,
-    medicalProcedureEntity
+    medicalCode,
+    medicalInterventionEntity,
 ];
