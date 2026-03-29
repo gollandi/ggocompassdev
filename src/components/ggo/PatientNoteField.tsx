@@ -39,6 +39,8 @@ export function PatientNoteField({
     >
       <button
         onClick={() => setIsExpanded(!isExpanded)}
+        aria-expanded={isExpanded}
+        aria-label={isExpanded ? "Collapse note field" : "Expand note field"}
         className="w-full flex items-center justify-between mb-4 text-left focus:outline-none focus:ring-2 focus:ring-ggo-teal rounded p-2 -m-2"
       >
         <div className="flex items-center gap-3">

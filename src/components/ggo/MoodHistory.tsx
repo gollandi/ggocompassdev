@@ -83,8 +83,8 @@ export function MoodHistory({ className = "" }: MoodHistoryProps) {
         className="w-full flex items-center justify-between text-left focus:outline-none focus:ring-2 focus:ring-ggo-teal rounded p-2 -m-2"
       >
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
-            <Calendar className="w-5 h-5 text-blue-600" />
+          <div className="w-11 h-11 rounded-full bg-ggo-teal/10 flex items-center justify-center">
+            <Calendar className="w-5 h-5 text-ggo-teal" />
           </div>
           <div>
             <h4 className="text-ggo-navy font-medium">Confidence Tracking</h4>

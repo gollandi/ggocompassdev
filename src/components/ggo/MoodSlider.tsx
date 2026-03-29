@@ -149,10 +149,11 @@ export function MoodSlider({
 
       {/* Date selector for backfilling mood entries */}
       <div className="mb-4">
-        <label className="block text-xs font-medium text-ggo-text-muted mb-1">
+        <label htmlFor="mood-date" className="block text-xs font-medium text-ggo-text-muted mb-1">
           Select date to record mood
         </label>
         <input
+          id="mood-date"
           type="date"
           className="w-full max-w-xs border rounded-md px-3 py-2 text-sm"
           value={selectedDate}
