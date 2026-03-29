@@ -2,6 +2,7 @@
  * User Preferences System
  * Handles pronoun, tone, and accessibility preferences with localStorage persistence
  */
+import { hasConsent } from '@/lib/consent';
 
 export type Pronoun = "he" | "she" | "they";
 export type PronounStorage = "he" | "she" | "they" | "unspecified";
@@ -79,6 +80,7 @@ export function loadPreferences(): UserPreferences {
  * Save user display name
  */
 export function saveUserName(name: string): void {
+  if (!hasConsent()) return;
   localStorage.setItem(KEYS.name, name);
 }
 
@@ -94,7 +96,9 @@ export function loadUserName(): string {
  */
 export function savePronoun(value: PronounStorage): Pronoun {
   const resolved = resolvePronoun(value);
-  localStorage.setItem(KEYS.pronoun, value);
+  if (hasConsent()) {
+    localStorage.setItem(KEYS.pronoun, value);
+  }
   return resolved;
 }
 
@@ -102,6 +106,7 @@ export function savePronoun(value: PronounStorage): Pronoun {
  * Save tone preference
  */
 export function saveTone(tone: Tone): void {
+  if (!hasConsent()) return;
   localStorage.setItem(KEYS.tone, tone);
 }
 
@@ -173,6 +178,7 @@ export function loadPatientNote(): string {
  */
 export function savePatientNote(note: string): void {
   if (typeof window === "undefined") return;
+  if (!hasConsent()) return;
   localStorage.setItem(KEYS.patientNote, note);
 }
 
@@ -195,6 +201,7 @@ export function loadSurgeryDate(): string | null {
 
 export function saveSurgeryDate(date: string | Date): void {
   if (typeof window === "undefined") return;
+  if (!hasConsent()) return;
   const d = typeof date === "string" ? date.slice(0, 10) : new Date(date).toISOString().slice(0, 10);
   localStorage.setItem(KEYS.surgeryDate, d);
 }
@@ -255,6 +262,7 @@ function normalizeDateString(date: string | Date): string {
  */
 export function saveMoodEntryForDate(mood: number, day: number, date: string | Date): void {
   if (typeof window === "undefined") return;
+  if (!hasConsent()) return;
   const target = normalizeDateString(date);
 
   const history = loadMoodHistory();

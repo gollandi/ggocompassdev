@@ -1,3 +1,5 @@
+import { hasConsent } from '@/lib/consent';
+
 const SELECTION_KEYS = {
   procedureName: 'ggo_local_procedure_name',
   procedureSlug: 'ggo_local_procedure_slug',
@@ -29,6 +31,7 @@ export function dispatchSelectionChange() {
 
 export function saveProcedureSelection(selection: ProcedureSelection) {
   if (typeof window === 'undefined') return;
+  if (!hasConsent()) return;
   localStorage.setItem(SELECTION_KEYS.procedureName, selection.name);
   localStorage.setItem(SELECTION_KEYS.procedureSlug, selection.slug || '');
   localStorage.setItem(SELECTION_KEYS.procedureId, selection.id || '');
@@ -37,6 +40,7 @@ export function saveProcedureSelection(selection: ProcedureSelection) {
 
 export function saveSiteSelection(selection: SiteSelection) {
   if (typeof window === 'undefined') return;
+  if (!hasConsent()) return;
   localStorage.setItem(SELECTION_KEYS.siteName, selection.name);
   localStorage.setItem(SELECTION_KEYS.siteSlug, selection.slug || '');
   localStorage.setItem(SELECTION_KEYS.siteId, selection.id || '');
