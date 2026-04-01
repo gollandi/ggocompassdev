@@ -3,6 +3,7 @@ import './globals.css';
 import { BrandBadge } from '@/components/ggo/BrandBadge';
 import { PreferenceHydrator } from '@/components/ggo/PreferenceHydrator';
 import { CookieConsent } from '@/components/layout/CookieConsent';
+import { PrototypeBanner } from '@/components/layout/PrototypeBanner';
 
 export const metadata: Metadata = {
   title: 'GGO Compass - Patient Journey Companion',
@@ -18,6 +19,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>
         <PreferenceHydrator />
+        <PrototypeBanner />
         {/* Persistent small GGOMED brand badge across the app */}
         <BrandBadge className="print:hidden" />
         {children}
