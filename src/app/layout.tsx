@@ -20,8 +20,9 @@ export default function RootLayout({
       <body suppressHydrationWarning>
         <PreferenceHydrator />
         <PrototypeBanner />
-        {/* Persistent small GGOMED brand badge across the app */}
-        <BrandBadge className="print:hidden" />
+        <header className="px-4 pt-4 pb-2 print:hidden">
+          <BrandBadge />
+        </header>
         {children}
         <CookieConsent />
       </body>
