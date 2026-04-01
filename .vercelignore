@@ -38,9 +38,8 @@ Thumbs.db
 tmp/
 temp/
 
-# Documentation and guides (optional - remove if you want these deployed)
-*.md
-!README.md
+# Documentation and guides
+docs/**/*.md
 
 # Old/backup files
 *.old
