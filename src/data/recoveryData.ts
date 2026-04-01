@@ -946,9 +946,38 @@ export const getDefaultRecoveryTimeline = (): RecoveryDay[] => {
   return procedureRecoveryData["Other Procedure"] || [];
 };
 
+/**
+ * Map Sanity procedure names to fallback data keys.
+ * Sanity names like "Varicocele Repair (Single-sided)" need to resolve
+ * to the base fallback key "Varicocele Repair".
+ */
+const PROCEDURE_NAME_ALIASES: Record<string, ProcedureType> = {
+  "Varicocele Repair (Single-sided)": "Varicocele Repair",
+  "Varicocele Repair (Bilateral)": "Varicocele Repair",
+  "Microsurgical Varicocele Correction": "Varicocele Repair",
+  "Micro-TESE": "Micro-TESE",
+  "Flexible Cystoscopy": "Cystoscopy & Biopsy",
+  "Rigid Cystoscopy & Bladder Biopsy": "Cystoscopy & Biopsy",
+};
+
 export const getRecoveryTimeline = (procedure: string): RecoveryDay[] => {
-  const normalizedProcedure = procedure as ProcedureType;
-  return procedureRecoveryData[normalizedProcedure] || getDefaultRecoveryTimeline();
+  // 1. Exact match
+  if (procedureRecoveryData[procedure as ProcedureType]) {
+    return procedureRecoveryData[procedure as ProcedureType]!;
+  }
+  // 2. Alias match (Sanity name → fallback key)
+  const alias = PROCEDURE_NAME_ALIASES[procedure];
+  if (alias && procedureRecoveryData[alias]) {
+    return procedureRecoveryData[alias]!;
+  }
+  // 3. Substring match (e.g., "Varicocele Repair (Single-sided)" contains "Varicocele Repair")
+  const keys = Object.keys(procedureRecoveryData) as ProcedureType[];
+  const partialMatch = keys.find(key => procedure.toLowerCase().includes(key.toLowerCase()));
+  if (partialMatch && procedureRecoveryData[partialMatch]) {
+    return procedureRecoveryData[partialMatch]!;
+  }
+  // 4. Default fallback
+  return getDefaultRecoveryTimeline();
 };
 
 export const adjustMessageForMood = (message: string, mood: MoodState): string => {
