@@ -34,19 +34,19 @@ export const microcopyDefaults: Record<string, string> = {
 
     // Quick Access: Pain Control
     "quick.pain.title": "Pain Control",
-    "quick.pain.content": "Take paracetamol (1g) every 6 hours. Ibuprofen (400mg) can be added if needed. Always take with food. Avoid aspirin unless prescribed.",
+    "quick.pain.content": "Take paracetamol (1g) every 6 hours, as prescribed by your surgeon. Ibuprofen (400mg) can be added if needed and not contraindicated. Always take with food. Avoid aspirin (increases bleeding risk) unless specifically prescribed.",
 
     // Quick Access: Wound Care
     "quick.wound.title": "Wound Care",
-    "quick.wound.content": "Keep clean and dry for 7 days. After dressing removal, gentle shower is fine. Pat dry, don't rub. No swimming or baths until follow-up.",
+    "quick.wound.content": "Keep clean and dry for 7 days. After dressing removal, a gentle shower is appropriate. Pat dry gently — avoid rubbing the area. No swimming or baths until your follow-up appointment.",
 
     // Quick Access: Activity
     "quick.activity.title": "Activity Guide",
-    "quick.activity.content": "Week 1: Rest, short walks only. Week 2: Light activities, no lifting >5kg. Week 3-4: Gradual return and avoid contact sports.",
+    "quick.activity.content": "Week 1: Rest, short walks only. Week 2: Light activities, no lifting heavier than a full kettle. Weeks 3–4: Gradual return to routine — avoid contact sports.",
 
     // Quick Access: When to Call
     "quick.call.title": "When to Call Us",
-    "quick.call.fallback": "Call NHS 111 for urgent medical advice or 999 for life-threatening emergencies while we publish your site-specific number.",
+    "quick.call.fallback": "For urgent medical advice, call NHS 111. For life-threatening emergencies, call 999.",
     "quick.call.urgent_prefix": "Urgent line: {phone}. Call immediately for severe pain, heavy bleeding, fever, breathing issues, or spreading infection.",
     "quick.call.ooh_suffix": " Out of hours: {phone}.",
     "quick.call.ooh_fallback": " Out of hours support: NHS 111.",
@@ -106,10 +106,10 @@ export const microcopyDefaults: Record<string, string> = {
     "recovery.emergency.team": "Your surgical team",
 
     // Website Links (Editable in Sanity, hardcoded fallback)
-    "link.main_website": "https://ggomedical.co.uk",
-    "link.patient_info": "https://ggomedical.co.uk/patient-information",
-    "link.anaesthesia_info": "https://ggomedical.co.uk/anaesthesia-explained",
-    "link.preop_guide": "https://ggomedical.co.uk/preparing-for-surgery",
+    "link.main_website": "https://ggomed.co.uk",
+    "link.patient_info": "https://ggomed.co.uk/patient-information",
+    "link.anaesthesia_info": "https://ggomed.co.uk/anaesthesia-explained",
+    "link.preop_guide": "https://ggomed.co.uk/preparing-for-surgery",
 
     // Get Ready Content (General)
     "prepare.headline": "Getting Ready for Your Procedure",

@@ -33,15 +33,15 @@ export interface ProcedureContent {
 // Fallback Constants (British English)
 const FALLBACK_COPY: Record<string, string> = {
     welcomeTitle: "Welcome to your recovery",
-    welcomeBody: "We're here to support you through every step of your recovery journey.",
+    welcomeBody: "This plan guides you through each stage of your recovery.",
     recoveryIntroTitle: "Your recovery plan",
     recoveryIntroBody: "Follow these daily steps to ensure the best possible outcome.",
     completionTitle: "Recovery complete",
-    completionBody: "You have successfully completed your recovery plan. Well done.",
+    completionBody: "You have completed your structured recovery plan.",
 
     // Generic Checklist Items
     meds_check: "Take your prescribed medication",
-    wound_check: "Check your wound for any redness",
+    wound_check: "Check your surgical site for redness or discharge",
     rest_check: "Rest for at least 30 minutes",
     hydrate_check: "Drink a glass of water",
 };
