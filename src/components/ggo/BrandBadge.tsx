@@ -103,15 +103,14 @@ export function BrandBadge({ className, hideOnSmallScreens = false }: BrandBadge
   return (
     <div
       className={cn(
-        "fixed top-3 left-3 z-30 hidden sm:block",
+        "w-fit",
         className
       )}
       aria-label="GGOMED brand badge"
     >
-      {/* Desktop only — hidden on mobile to avoid overlapping page headings */}
       <Link
         href="/"
-        className="pointer-events-auto flex flex-col gap-2 rounded-3xl border border-ggo-soft-blue bg-white/95 px-4 py-3 shadow-lg shadow-ggo-charcoal/5 backdrop-blur supports-[backdrop-filter]:bg-white/80 hover:shadow-xl transition"
+        className="inline-flex flex-col gap-2 rounded-3xl border border-ggo-soft-blue bg-white/95 px-4 py-3 shadow-sm hover:shadow-md transition"
       >
         <div className="flex items-center gap-3">
           <Image
