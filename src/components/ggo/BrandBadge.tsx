@@ -103,34 +103,15 @@ export function BrandBadge({ className, hideOnSmallScreens = false }: BrandBadge
   return (
     <div
       className={cn(
-        "fixed top-3 left-3 z-30",
-        hideOnSmallScreens && "hidden sm:block",
+        "fixed top-3 left-3 z-30 hidden sm:block",
         className
       )}
       aria-label="GGOMED brand badge"
     >
-      {/* Mobile: compact pill — logo only */}
+      {/* Desktop only — hidden on mobile to avoid overlapping page headings */}
       <Link
         href="/"
-        className="pointer-events-auto sm:hidden flex items-center gap-2 rounded-full border border-ggo-soft-blue bg-white/95 p-1.5 shadow-md backdrop-blur supports-[backdrop-filter]:bg-white/80 hover:shadow-lg transition"
-      >
-        <Image
-          src="/compass-logo.png"
-          alt="GGOMED Compass"
-          width={28}
-          height={28}
-          priority
-          className="rounded-full select-none"
-        />
-        <span className="text-[10px] font-bold tracking-wide text-ggo-black pr-2">
-          GGO
-        </span>
-      </Link>
-
-      {/* Desktop: expanded card */}
-      <Link
-        href="/"
-        className="pointer-events-auto hidden sm:flex flex-col gap-2 rounded-3xl border border-ggo-soft-blue bg-white/95 px-4 py-3 shadow-lg shadow-ggo-charcoal/5 backdrop-blur supports-[backdrop-filter]:bg-white/80 hover:shadow-xl transition"
+        className="pointer-events-auto flex flex-col gap-2 rounded-3xl border border-ggo-soft-blue bg-white/95 px-4 py-3 shadow-lg shadow-ggo-charcoal/5 backdrop-blur supports-[backdrop-filter]:bg-white/80 hover:shadow-xl transition"
       >
         <div className="flex items-center gap-3">
           <Image
