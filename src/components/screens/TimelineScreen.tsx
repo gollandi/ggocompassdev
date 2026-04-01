@@ -402,7 +402,7 @@ export function TimelineScreen({
             <h3 className="text-ggo-navy mb-6">Additional Resources</h3>
             <div className="grid md:grid-cols-2 gap-4">
               <a
-                href={microcopyMap["link.patient_info"] || "https://ggomedical.co.uk/patient-information"}
+                href={microcopyMap["link.patient_info"] || "https://ggomed.co.uk/patient-information"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-6 bg-white rounded-2xl border border-ggo-navy/5 shadow-sm hover:shadow-md transition-all group"
@@ -411,7 +411,7 @@ export function TimelineScreen({
                 <p className="text-sm text-ggo-text-muted">A full library of leaflets and guides for all procedures.</p>
               </a>
               <a
-                href={microcopyMap["link.preop_guide"] || "https://ggomedical.co.uk/preparing-for-surgery"}
+                href={microcopyMap["link.preop_guide"] || "https://ggomed.co.uk/preparing-for-surgery"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-6 bg-white rounded-2xl border border-ggo-navy/5 shadow-sm hover:shadow-md transition-all group"

@@ -149,7 +149,7 @@ export function CompletionScreen({ onExport, onReset }: CompletionScreenProps) {
         </motion.div>
       </div>
       
-      <FooterDisclaimer />
+      <FooterDisclaimer compact={false} />
     </div>
   );
 }
