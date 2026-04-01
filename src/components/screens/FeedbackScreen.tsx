@@ -156,7 +156,7 @@ export function FeedbackScreen({ onNext }: FeedbackScreenProps) {
         </motion.div>
       </div>
       
-      <FooterDisclaimer />
+      <FooterDisclaimer compact={false} />
     </div>
   );
 }
