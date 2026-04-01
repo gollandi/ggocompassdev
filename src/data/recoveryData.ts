@@ -28,7 +28,7 @@ const penileMinorProcedureRecovery: RecoveryDay[] = [
   {
     day: 0,
     title: "Surgery Day",
-    reassurance: "Mild bleeding, swelling, and tenderness around the penis are normal today.",
+    reassurance: "Mild bleeding, swelling, and tenderness around the penis are expected today.",
     forecast: "Discomfort usually increases as the anaesthetic wears off, then settles over the next 1-2 days.",
     redFlags: [
       "Heavy bleeding that doesn't stop with gentle pressure",
@@ -120,7 +120,7 @@ const penileMinorProcedureRecovery: RecoveryDay[] = [
     reassurance: "Healing is robust now.",
     forecast: "Appearance stable; scar fading.",
     redFlags: generalRedFlags,
-    nurseNote: "Well done. Follow up as scheduled for your final check.",
+    nurseNote: "Follow up as scheduled for your final check.",
     nurseName: "Michael",
   },
 ];
@@ -129,7 +129,7 @@ const spermRetrievalRecovery: RecoveryDay[] = [
   {
     day: 0,
     title: "Surgery Day",
-    reassurance: "Scrotal aching, swelling, and bruising are normal today.",
+    reassurance: "Scrotal aching, swelling, and bruising are expected today.",
     forecast: "The first 48 hours are usually the most uncomfortable.",
     redFlags: [
       "Severe pain not controlled by medication",
@@ -429,7 +429,7 @@ const transperinealBiopsyRecovery: RecoveryDay[] = [
     day: 5,
     title: "Comfort Restored",
     reassurance: "Soreness should be gone. Life back to normal.",
-    forecast: "Blood in semen can still occur; this is normal.",
+    forecast: "Blood in semen can still occur; this is expected.",
     redFlags: generalRedFlags,
     nurseNote: "Don't be alarmed by blood in semen for several weeks.",
     nurseName: "Caroline",
@@ -523,7 +523,7 @@ export const procedureRecoveryData: Partial<Record<ProcedureType, RecoveryDay[]>
     {
       day: 0,
       title: "Surgery Day",
-      reassurance: "Numbness and mild bleeding are normal after the operation. Dressing feels tight.",
+      reassurance: "Numbness and mild bleeding are expected after the operation. Dressing feels tight.",
       forecast: "The anaesthetic will wear off this evening; take pain relief as advised.",
       redFlags: ["Bleeding that soaks a pad or won't stop with pressure."],
       nurseNote: "Keep the dressing dry. Wear loose-fitting underwear and rest with your feet slightly elevated.",
@@ -656,7 +656,7 @@ export const procedureRecoveryData: Partial<Record<ProcedureType, RecoveryDay[]>
     {
       day: 0,
       title: "Surgery Day",
-      reassurance: "Groin aching or pulling is normal. Rest today.",
+      reassurance: "Groin aching or pulling is expected. Rest today.",
       forecast: "Discomfort settling by tomorrow.",
       redFlags: ["Severe pain, heavy bleeding, or breathing issues."],
       nurseNote: "Wear supportive underwear.",
@@ -665,7 +665,7 @@ export const procedureRecoveryData: Partial<Record<ProcedureType, RecoveryDay[]>
     {
       day: 1,
       title: "First Morning",
-      reassurance: "Mild scrotal swelling is normal.",
+      reassurance: "Mild scrotal swelling is expected.",
       forecast: "Bruising peaks around day 3.",
       redFlags: ["Rapid swelling or fever."],
       nurseNote: "Ice packs help.",
@@ -728,7 +728,7 @@ export const procedureRecoveryData: Partial<Record<ProcedureType, RecoveryDay[]>
     {
       day: 17,
       title: "Internal Healing",
-      reassurance: "Minor twinges are normal.",
+      reassurance: "Minor twinges are expected.",
       forecast: "Sensitivity decreasing.",
       redFlags: generalRedFlags,
     },
@@ -763,7 +763,7 @@ export const procedureRecoveryData: Partial<Record<ProcedureType, RecoveryDay[]>
     {
       day: 0,
       title: "Surgery Day",
-      reassurance: "Catheter draining pink urine; abdominal ache is normal.",
+      reassurance: "Catheter draining pink urine; abdominal ache is expected.",
       forecast: "Fluid should stay pale.",
       redFlags: ["Blockage or deep red flow."],
       nurseNote: "Drink plenty of fluids.",
